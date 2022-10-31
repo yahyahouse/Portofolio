@@ -1,17 +1,45 @@
-
+body{
+    height: 100%;
+}
 .jumbotron{
     padding-top: 6rem;
     background-color: #eae8dc;
 }
 #projects{
-    background-color: #eae8dc;
+    background-color: #f4feec;
 }
 #contact{
-    background-color: #f4feec;
+    background-color: #eae8dc;
 }
 section{
     padding-top: 5rem;
 }
 #click {
     cursor: pointer
+}
+#techstack{
+    background-color: #eae8dc;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+}
+.nav-link{
+    text-decoration: none;
+    color: #eae8dc;
+    position: relative;
+}
+.nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 0px;
+    border-radius: 2px;
+    background-color: #eae8dc;
+    transition: 0.4s ease;
+}
+.nav-link:hover::after{
+    width: 100%;
 }
