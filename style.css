@@ -1,13 +1,28 @@
 
+.navbar-custom{
+    background-color: #05386b ;
+    color: #edf5e1;
+    font-family: 'Open Sans', sans-serif !important;
+}
+.section-custom{
+    color: #edf5e1;
+    font-family: 'Open Sans', sans-serif !important;
+}
+.color-new{
+    color: #05386b;
+}
+body{
+    color: #05386b;
+}
 .jumbotron{
     padding-top: 6rem;
-    background-color: #eae8dc;
+    background-color: #5cdb95;
 }
 #projects{
-    background-color: #f4feec;
+    background-color: #edf5e1;
 }
 #contact{
-    background-color: #eae8dc;
+    background-color: #5cdb95;
 }
 section{
     padding-top: 5rem;
@@ -16,7 +31,7 @@ section{
     cursor: pointer
 }
 #techstack{
-    background-color: #eae8dc;
+    background-color: #5cdb95;
 }
 .nav-links{
     list-style: none;
