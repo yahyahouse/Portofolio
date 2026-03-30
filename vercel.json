@@ -1,29 +1,4 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/anime",
-      "destination": "/index-anime.html"
-    },
-    {
-      "source": "/original",
-      "destination": "/index-original.html"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/index-anime",
-      "destination": "/anime",
-      "permanent": true
-    },
-    {
-      "source": "/index-original",
-      "destination": "/original",
-      "permanent": true
-    }
-  ]
+  "trailingSlash": false
 }
