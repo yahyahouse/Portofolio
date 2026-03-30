@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index-jawa.html"
+      "destination": "/index.html"
     },
     {
       "source": "/anime",
@@ -10,7 +10,7 @@
     },
     {
       "source": "/original",
-      "destination": "/index.html"
+      "destination": "/index-original.html"
     }
   ],
   "cleanUrls": true

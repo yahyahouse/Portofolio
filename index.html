@@ -1,171 +1,169 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="jv" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yahya Wijaya — Software Engineer & Backend Developer based in Jakarta, Indonesia." />
-  <meta name="keywords" content="Yahya Wijaya, Software Engineer, Backend Developer, Java Spring Boot, Golang, Jakarta" />
+  <meta name="description" content="Yahya Wijaya — Insinyur Piranti Lunak saking Jakarta, Indonesia." />
   <meta name="author" content="Yahya Wijaya" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yahyawijaya.com/" />
-  <meta property="og:title" content="Yahya Wijaya — Software Engineer" />
-  <meta property="og:description" content="Dedicated to writing clean, maintainable code." />
-  <meta property="og:image" content="https://yahyawijaya.com/asset/foto.jpg" />
-  <title>Yahya Wijaya — ソフトウェアエンジニア</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Space+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <title>Yahya Wijaya — Insinyur Piranti Lunak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* ══════════════════════════════════════════════
-       ANIME / LIGHT NOVEL THEME — YAHYA WIJAYA
-       Dark mode: deep indigo night + sakura neon
-       Light mode: washi paper cream + ink accents
-    ══════════════════════════════════════════════ */
+    /* ══════════════════════════════════════════════════════
+       TEMA JAWA — KERATON STYLE
+       Sogan coklat + Emas + Hijau lumut + Krem dluwang
+       Inspirasi: batik kawung, parang, wayang kulit
+    ══════════════════════════════════════════════════════ */
     :root {
-      --accent:   #FF6B9D;   /* sakura pink */
-      --accent2:  #C77DFF;   /* lavender */
-      --accent3:  #00D4FF;   /* cyber blue */
-      --bg:       #0D0B1A;   /* deep indigo night */
-      --bg2:      #120F25;
-      --bg3:      #1A1535;
-      --card:     #16132E;
-      --card2:    #1E1840;
-      --border:   rgba(255,107,157,0.18);
-      --border2:  rgba(199,125,255,0.12);
-      --text:     #E8D8F0;
-      --muted:    #8B7BA8;
-      --heading:  #F5EAF8;
-      --glow:     rgba(255,107,157,0.3);
-      --glow2:    rgba(199,125,255,0.2);
-      --sakura1:  rgba(255,107,157,0.06);
-      --sakura2:  rgba(199,125,255,0.06);
+      --accent:   #C8922A;   /* emas keraton */
+      --accent2:  #8B4513;   /* sogan coklat */
+      --accent3:  #4A7C59;   /* hijau lumut */
+      --bg:       #1A1208;   /* coklat arang */
+      --bg2:      #201608;
+      --bg3:      #2A1E0A;
+      --card:     #241A08;
+      --card2:    #2E2210;
+      --border:   rgba(200,146,42,0.2);
+      --border2:  rgba(200,146,42,0.1);
+      --text:     #E8D5A3;   /* krem dluwang */
+      --muted:    #8A7048;
+      --heading:  #F5E6C0;
+      --glow:     rgba(200,146,42,0.25);
     }
     [data-theme="light"] {
-      --accent:   #D4507A;
-      --accent2:  #8B4FC8;
-      --accent3:  #0099CC;
-      --bg:       #F7F0E8;   /* washi paper */
-      --bg2:      #EFE7D8;
-      --bg3:      #E8DCCC;
-      --card:     #FFFDF8;
-      --card2:    #F5EEE4;
-      --border:   rgba(212,80,122,0.2);
-      --border2:  rgba(139,79,200,0.15);
-      --text:     #2D1B3D;
-      --muted:    #7A6080;
-      --heading:  #1A0A2E;
-      --glow:     rgba(212,80,122,0.15);
-      --glow2:    rgba(139,79,200,0.12);
-      --sakura1:  rgba(212,80,122,0.05);
-      --sakura2:  rgba(139,79,200,0.05);
+      --accent:   #8B6914;
+      --accent2:  #5C2E0A;
+      --accent3:  #2D5C3A;
+      --bg:       #F5EDD5;   /* dluwang / kertas kuning tua */
+      --bg2:      #EDE3C5;
+      --bg3:      #E5D8B5;
+      --card:     #FAF3DC;
+      --card2:    #F0E8C8;
+      --border:   rgba(139,105,20,0.25);
+      --border2:  rgba(139,105,20,0.12);
+      --text:     #2C1A06;
+      --muted:    #7A5C28;
+      --heading:  #180E02;
+      --glow:     rgba(139,105,20,0.18);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-family: 'IM Fell English', serif;
       background: var(--bg);
       color: var(--text);
       transition: background 0.4s, color 0.4s;
       overflow-x: hidden;
     }
 
-    /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--accent), var(--accent2)); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius: 0;
+    }
 
-    /* ── FLOATING SAKURA PETALS (CSS only) ── */
-    .sakura-field {
+    /* ══ BATIK KAWUNG BACKGROUND PATTERN ══ */
+    body::after {
+      content: '';
       position: fixed; inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .petal {
-      position: absolute;
-      top: -30px;
-      font-size: 1rem;
-      opacity: 0;
-      animation: fall linear infinite;
-      user-select: none;
-    }
-    .petal:nth-child(1)  { left:5%;   animation-duration:12s; animation-delay:0s;    font-size:0.7rem; }
-    .petal:nth-child(2)  { left:15%;  animation-duration:18s; animation-delay:2s;    font-size:1.1rem; }
-    .petal:nth-child(3)  { left:25%;  animation-duration:14s; animation-delay:5s;    font-size:0.8rem; }
-    .petal:nth-child(4)  { left:35%;  animation-duration:20s; animation-delay:1s;    font-size:0.6rem; }
-    .petal:nth-child(5)  { left:45%;  animation-duration:16s; animation-delay:7s;    font-size:0.9rem; }
-    .petal:nth-child(6)  { left:55%;  animation-duration:13s; animation-delay:3s;    font-size:1rem;   }
-    .petal:nth-child(7)  { left:65%;  animation-duration:19s; animation-delay:9s;    font-size:0.7rem; }
-    .petal:nth-child(8)  { left:75%;  animation-duration:15s; animation-delay:4s;    font-size:0.8rem; }
-    .petal:nth-child(9)  { left:85%;  animation-duration:17s; animation-delay:6s;    font-size:0.65rem;}
-    .petal:nth-child(10) { left:92%;  animation-duration:11s; animation-delay:8s;    font-size:1rem;   }
-    @keyframes fall {
-      0%   { opacity:0; transform: translateY(-30px) rotate(0deg); }
-      10%  { opacity:0.6; }
-      90%  { opacity:0.3; }
-      100% { opacity:0; transform: translateY(105vh) rotate(720deg) translateX(60px); }
+      pointer-events: none; z-index: 0;
+      opacity: 0.045;
+      background-image:
+              radial-gradient(ellipse 10px 14px at 24px 24px, var(--accent) 60%, transparent 65%),
+              radial-gradient(ellipse 10px 14px at 24px 0px,  var(--accent) 60%, transparent 65%),
+              radial-gradient(ellipse 14px 10px at 0px 24px,  var(--accent) 60%, transparent 65%),
+              radial-gradient(ellipse 14px 10px at 48px 24px, var(--accent) 60%, transparent 65%);
+      background-size: 48px 48px;
     }
 
-    /* ── NOISE OVERLAY ── */
+    /* ══ NOISE TEXTURE ══ */
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: 0.5;
     }
 
-    /* ── NAV ── */
+    /* ══ FLOATING DAUN ══ */
+    .daun-field {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .daun {
+      position: absolute; top: -40px;
+      opacity: 0;
+      font-size: 1rem;
+      animation: gugur linear infinite;
+      user-select: none;
+    }
+    .daun:nth-child(1)  { left:4%;   animation-duration:18s; animation-delay:0s;   font-size:0.8rem; }
+    .daun:nth-child(2)  { left:14%;  animation-duration:22s; animation-delay:3s;   font-size:1.1rem; }
+    .daun:nth-child(3)  { left:24%;  animation-duration:16s; animation-delay:6s;   font-size:0.7rem; }
+    .daun:nth-child(4)  { left:36%;  animation-duration:25s; animation-delay:1s;   font-size:0.9rem; }
+    .daun:nth-child(5)  { left:47%;  animation-duration:20s; animation-delay:9s;   font-size:0.65rem;}
+    .daun:nth-child(6)  { left:58%;  animation-duration:17s; animation-delay:4s;   font-size:1rem;   }
+    .daun:nth-child(7)  { left:68%;  animation-duration:23s; animation-delay:7s;   font-size:0.75rem;}
+    .daun:nth-child(8)  { left:78%;  animation-duration:19s; animation-delay:2s;   font-size:0.85rem;}
+    .daun:nth-child(9)  { left:88%;  animation-duration:21s; animation-delay:5s;   font-size:0.7rem; }
+    .daun:nth-child(10) { left:94%;  animation-duration:15s; animation-delay:8s;   font-size:1rem;   }
+    @keyframes gugur {
+      0%   { opacity:0; transform:translateY(-40px) rotate(0deg); }
+      8%   { opacity:0.55; }
+      92%  { opacity:0.25; }
+      100% { opacity:0; transform:translateY(105vh) rotate(540deg) translateX(50px); }
+    }
+
+    /* ══ NAV ══ */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
+      position: fixed; top:0; left:0; right:0;
       z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 5%;
-      background: rgba(13,11,26,0.82);
-      backdrop-filter: blur(24px);
+      padding: 0.9rem 5%;
+      background: rgba(26,18,8,0.9);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       transition: background 0.4s;
     }
-    [data-theme="light"] nav { background: rgba(247,240,232,0.88); }
+    [data-theme="light"] nav { background: rgba(245,237,213,0.92); }
+
+    /* Ornamen garis nav */
+    nav::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent3), var(--accent), transparent);
+      opacity: 0.7;
+    }
 
     .nav-logo {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      display: flex; align-items: center; gap: 0.5rem;
       text-decoration: none;
+      display: flex; flex-direction: column; line-height: 1;
     }
-    .nav-logo-jp {
+    .nav-logo-jv {
+      font-family: 'Cinzel', serif;
+      font-weight: 900; font-size: 1.15rem;
       color: var(--accent);
-      font-size: 0.75rem;
       letter-spacing: 2px;
-      display: block;
-      line-height: 1;
     }
-    .nav-logo-en {
-      color: var(--heading);
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1;
+    .nav-logo-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; color: var(--muted);
+      letter-spacing: 3px; text-transform: uppercase;
     }
 
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.3s;
+      font-size: 0.68rem; color: var(--muted);
+      text-decoration: none; letter-spacing: 1.5px;
+      text-transform: uppercase; transition: color 0.3s;
       position: relative;
     }
     .nav-links a::after {
-      content: '';
-      position: absolute; bottom: -4px; left: 0;
+      content: ''; position: absolute; bottom: -4px; left: 0;
       width: 0; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
       transition: width 0.3s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--accent); }
@@ -173,37 +171,33 @@
 
     .nav-right { display: flex; align-items: center; gap: 1rem; }
     .theme-toggle {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      cursor: pointer; width: 52px; height: 28px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 0; cursor: pointer; width: 52px; height: 28px;
       position: relative; transition: all 0.3s;
     }
     .theme-toggle::before {
-      content: '🌙';
-      position: absolute; top: 50%; left: 5px;
-      transform: translateY(-50%); font-size: 14px; transition: all 0.3s;
+      content: '🌙'; position: absolute; top:50%; left:5px;
+      transform: translateY(-50%); font-size:13px;
     }
-    [data-theme="light"] .theme-toggle::before { content: '☀️'; left: 28px; }
+    [data-theme="light"] .theme-toggle::before { content:'☀️'; left:28px; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
+    .hamburger span { width:24px; height:2px; background:var(--text); display:block; transition:all 0.3s; }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; display: block; }
-
-    /* ── KANJI DECORATIONS ── */
-    .kanji-deco {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 700;
+    /* ══ ORNAMEN BORDER HELPER ══ */
+    .ornamen-border {
+      position: relative;
+    }
+    .ornamen-border::before, .ornamen-border::after {
+      content: '✦ ── ── ✦';
+      display: block;
+      font-size: 0.6rem;
       color: var(--accent);
-      opacity: 0.06;
-      font-size: clamp(6rem, 15vw, 14rem);
-      line-height: 1;
-      position: absolute;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: -0.05em;
+      opacity: 0.5;
+      text-align: center;
+      letter-spacing: 4px;
     }
 
-    /* ── HERO ── */
+    /* ══ HERO ══ */
     #hero {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -214,27 +208,31 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-              radial-gradient(ellipse 70% 60% at 75% 35%, rgba(255,107,157,0.1) 0%, transparent 55%),
-              radial-gradient(ellipse 50% 50% at 20% 75%, rgba(199,125,255,0.08) 0%, transparent 50%),
-              radial-gradient(ellipse 40% 40% at 50% 90%, rgba(0,212,255,0.05) 0%, transparent 50%);
+              radial-gradient(ellipse 60% 70% at 75% 40%, rgba(200,146,42,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 50% at 20% 70%, rgba(74,124,89,0.06) 0%, transparent 50%);
     }
 
-    /* Manga panel lines */
-    .hero-lines {
+    /* Parang lines — diagonal repeating pattern */
+    .hero-parang {
       position: absolute; inset: 0;
-      background-image:
-              linear-gradient(rgba(255,107,157,0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,107,157,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
+      background-image: repeating-linear-gradient(
+              -45deg,
+              transparent,
+              transparent 28px,
+              rgba(200,146,42,0.025) 28px,
+              rgba(200,146,42,0.025) 29px
+      );
     }
-    /* Diagonal accent line */
-    .hero-slash {
+
+    /* Wayang silhouette deco */
+    .wayang-deco {
       position: absolute;
-      right: 0; top: 0;
-      width: 45%;
-      height: 100%;
-      background: linear-gradient(135deg, transparent 0%, rgba(255,107,157,0.04) 50%, rgba(199,125,255,0.03) 100%);
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+      font-size: clamp(10rem, 20vw, 22rem);
+      opacity: 0.028;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      filter: sepia(1);
     }
 
     .hero-content {
@@ -244,95 +242,108 @@
       max-width: 1200px; margin: 0 auto; width: 100%;
     }
 
-    /* Badge */
+    /* Gelung / ornamen teks Jawa header */
+    .aksara-deco {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      opacity: 0.9;
+    }
+    .aksara-deco::before, .aksara-deco::after {
+      content: ''; flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent));
+    }
+    .aksara-deco::after {
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: rgba(255,107,157,0.08);
-      border: 1px solid rgba(255,107,157,0.35);
-      border-radius: 50px;
-      padding: 0.4rem 1.1rem;
+      background: rgba(200,146,42,0.08);
+      border: 1px solid rgba(200,146,42,0.35);
+      border-radius: 0;
+      padding: 0.45rem 1.1rem;
       font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--accent);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-size: 0.66rem; color: var(--accent);
+      letter-spacing: 2px; text-transform: uppercase;
       margin-bottom: 1.25rem;
     }
-    .hero-badge::before { content: '✿'; animation: spin-slow 4s linear infinite; display: inline-block; }
-    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .hero-badge::before { content: '◈'; animation: kedip 2.5s ease-in-out infinite; display: inline-block; }
+    @keyframes kedip { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.85)} }
 
     .hero-name {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Cinzel', serif;
       font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 700;
-      line-height: 1.05;
+      font-weight: 900;
+      line-height: 1;
       color: var(--heading);
-      letter-spacing: -1px;
-      margin-bottom: 0.3rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 40px rgba(200,146,42,0.15);
     }
     .hero-name .accent-text {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: linear-gradient(135deg, var(--accent) 20%, #E8B84B 50%, var(--accent3) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .hero-name-jp {
+    .hero-name-jv {
       display: block;
-      font-size: 0.45em;
-      letter-spacing: 6px;
-      color: var(--muted);
-      font-weight: 300;
-      margin-bottom: 0.2em;
+      font-family: 'IM Fell English', serif;
+      font-size: 0.35em; font-style: italic;
+      color: var(--muted); font-weight: 400;
+      letter-spacing: 4px; margin-bottom: 0.3em;
       -webkit-text-fill-color: var(--muted);
     }
 
     .hero-role {
       font-family: 'Space Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      letter-spacing: 1px;
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 1.5rem; letter-spacing: 2px;
     }
-    .hero-role span { color: var(--accent2); }
+    .hero-role span { color: var(--accent3); }
 
     .hero-tagline {
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.8;
-      max-width: 460px;
-      margin-bottom: 2.5rem;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--text); line-height: 1.9;
+      max-width: 460px; margin-bottom: 2.5rem;
       opacity: 0.85;
-      border-left: 2px solid var(--accent);
-      padding-left: 1rem;
-      font-style: italic;
+      padding: 0.8rem 1.2rem;
+      border-left: 3px solid var(--accent);
+      border-right: none;
+      background: rgba(200,146,42,0.04);
+      position: relative;
+    }
+    .hero-tagline::before {
+      content: '"';
+      font-family: 'Cinzel', serif;
+      font-size: 3rem; color: var(--accent);
+      opacity: 0.3; line-height: 0;
+      position: absolute; top: 1.5rem; left: 0.3rem;
     }
 
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.8rem;
-      border-radius: 4px;
+      padding: 0.85rem 2rem; border-radius: 0;
       font-family: 'Space Mono', monospace;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
       text-decoration: none; cursor: pointer; border: none;
       transition: all 0.3s; position: relative; overflow: hidden;
     }
-    .btn::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .btn:hover::before { opacity: 1; }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      box-shadow: 0 0 30px rgba(255,107,157,0.35), 0 0 0 1px rgba(255,107,157,0.2);
+      background: linear-gradient(135deg, var(--accent), #B8821E);
+      color: #1A1208;
+      box-shadow: 0 0 30px rgba(200,146,42,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(255,107,157,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(200,146,42,0.5); }
     .btn-outline {
-      background: transparent;
-      color: var(--text);
+      background: transparent; color: var(--text);
       border: 1px solid var(--border);
     }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
@@ -341,517 +352,455 @@
       display: flex; gap: 2.5rem;
       margin-top: 2.5rem; padding-top: 2rem;
       border-top: 1px solid var(--border);
-    }
-    .stat-num {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.9rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .stat-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem; color: var(--muted);
-      letter-spacing: 1px; text-transform: uppercase;
-    }
-
-    /* ── HERO VISUAL ── */
-    .hero-visual {
-      display: flex; justify-content: center; align-items: center;
       position: relative;
     }
-
-    .avatar-frame {
-      position: relative; width: 320px; height: 320px;
+    .hero-stats::before {
+      content: '◈ ── ◈ ── ◈';
+      position: absolute; top: -0.6rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.55rem; color: var(--accent);
+      background: var(--bg); padding: 0 0.5rem;
+      letter-spacing: 3px; opacity: 0.7;
+      white-space: nowrap;
     }
-
-    /* Animated hexagon ring */
-    .avatar-hex {
-      position: absolute; inset: -24px;
-      animation: spin-slow 15s linear infinite;
+    .stat-num {
+      font-family: 'Cinzel', serif; font-size: 1.9rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), #E8B84B);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .avatar-hex svg { width: 100%; height: 100%; }
+    .stat-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
 
-    .avatar-hex2 {
-      position: absolute; inset: -44px;
-      animation: spin-slow 25s linear infinite reverse;
-      opacity: 0.4;
+    /* ══ HERO VISUAL ══ */
+    .hero-visual { display:flex; justify-content:center; align-items:center; position:relative; }
+
+    .avatar-frame { position:relative; width:320px; height:320px; }
+
+    /* Batik frame rings */
+    .avatar-ring-outer {
+      position: absolute; inset: -28px;
+      border: 1px solid rgba(200,146,42,0.25);
+      border-radius: 0;
+      animation: putar 30s linear infinite;
+      /* Octagon shape */
+      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
     }
-    .avatar-hex2 svg { width: 100%; height: 100%; }
+    .avatar-ring-inner {
+      position: absolute; inset: -14px;
+      border: 1px dashed rgba(200,146,42,0.2);
+      border-radius: 0;
+      animation: putar 20s linear infinite reverse;
+      clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+    }
+    @keyframes putar { to { transform: rotate(360deg); } }
 
     .avatar-img {
       width: 100%; height: 100%;
-      border-radius: 50%;
-      border: 2px solid rgba(255,107,157,0.3);
       overflow: hidden;
       position: relative;
+      border: 2px solid rgba(200,146,42,0.4);
+      /* Wayang-style clipping — slight octagon */
+      clip-path: polygon(12% 0%, 88% 0%, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0% 88%, 0% 12%);
       box-shadow:
-              0 0 0 8px rgba(255,107,157,0.05),
-              0 0 60px rgba(255,107,157,0.15),
-              0 0 120px rgba(199,125,255,0.1);
+              0 0 0 1px rgba(200,146,42,0.1),
+              0 0 60px rgba(200,146,42,0.12),
+              inset 0 0 40px rgba(0,0,0,0.5);
     }
-    .avatar-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .avatar-img img { width:100%; height:100%; object-fit:cover; object-position:top; }
 
-    /* Glitch scan line on avatar */
+    /* Scan lines wayang style */
     .avatar-img::after {
-      content: '';
-      position: absolute; inset: 0;
+      content:'';
+      position:absolute; inset:0;
       background: repeating-linear-gradient(
-              0deg,
-              transparent,
-              transparent 2px,
-              rgba(255,107,157,0.02) 2px,
-              rgba(255,107,157,0.02) 4px
+              0deg, transparent, transparent 3px,
+              rgba(200,146,42,0.025) 3px, rgba(200,146,42,0.025) 4px
       );
-      pointer-events: none;
     }
 
-    /* Corner decorations */
-    .corner {
-      position: absolute;
-      width: 24px; height: 24px;
-      border-color: var(--accent);
-      border-style: solid;
+    /* Corner ornaments */
+    .koro {
+      position: absolute; width: 20px; height: 20px;
+      border-color: var(--accent); border-style: solid; opacity: 0.8;
     }
-    .corner-tl { top: -8px; left: -8px; border-width: 2px 0 0 2px; }
-    .corner-tr { top: -8px; right: -8px; border-width: 2px 2px 0 0; }
-    .corner-bl { bottom: -8px; left: -8px; border-width: 0 0 2px 2px; }
-    .corner-br { bottom: -8px; right: -8px; border-width: 0 2px 2px 0; }
+    .koro-tl { top:-8px; left:-8px; border-width: 2px 0 0 2px; }
+    .koro-tr { top:-8px; right:-8px; border-width: 2px 2px 0 0; }
+    .koro-bl { bottom:-8px; left:-8px; border-width: 0 0 2px 2px; }
+    .koro-br { bottom:-8px; right:-8px; border-width: 0 2px 2px 0; }
 
-    /* Status card floating */
-    .status-card {
+    /* Floating info card */
+    .info-float {
       position: absolute;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--text);
-      backdrop-filter: blur(10px);
-      white-space: nowrap;
+      border-left: 3px solid var(--accent);
+      padding: 0.55rem 0.9rem;
+      font-family: 'Space Mono', monospace; font-size: 0.62rem;
+      color: var(--text); white-space: nowrap;
     }
-    .status-card .sc-label { color: var(--muted); display: block; margin-bottom: 0.15rem; letter-spacing: 1px; }
-    .status-card .sc-val { color: var(--accent); font-weight: 700; }
-    .sc-top    { top: 10%; right: -30px; animation: float1 3s ease-in-out infinite; }
-    .sc-bottom { bottom: 15%; left: -30px; animation: float2 3.5s ease-in-out infinite; }
-    @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+    .info-float .if-label { color: var(--muted); display: block; margin-bottom:0.1rem; letter-spacing:1px; }
+    .info-float .if-val { color: var(--accent); font-weight: 700; }
+    .if-top    { top: 8%; right: -28px; animation: ambang1 3.5s ease-in-out infinite; }
+    .if-bottom { bottom:12%; left: -28px; animation: ambang2 4s ease-in-out infinite; }
+    @keyframes ambang1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes ambang2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
 
-    /* ── SECTIONS COMMON ── */
+    /* ══ SECTIONS ══ */
     section { padding: 100px 5%; position: relative; z-index: 1; }
 
     .section-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--accent);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      color: var(--accent); letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.6rem;
     }
-    .section-label::before { content: '◆'; font-size: 0.5rem; }
+    .section-label::before { content: '◈'; font-size: 0.55rem; }
 
     .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: var(--heading);
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+      font-weight: 700; color: var(--heading);
+      letter-spacing: 1px; line-height: 1.15; margin-bottom: 1rem;
     }
-    .section-title .jp { font-size: 0.45em; color: var(--muted); display: block; font-weight: 300; letter-spacing: 4px; }
-    .section-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; max-width: 560px; }
+    .section-title .jv {
+      font-family: 'IM Fell English', serif;
+      font-size: 0.4em; font-style: italic;
+      color: var(--muted); display: block;
+      font-weight: 400; letter-spacing: 4px;
+    }
+    .section-desc { font-style: italic; color: var(--muted); font-size: 0.95rem; line-height: 1.85; max-width: 560px; }
     .section-header { margin-bottom: 4rem; }
 
-    /* Panel border style for cards */
-    .panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0;
-      position: relative;
-    }
-    .panel::before {
-      content: '';
-      position: absolute; top: 4px; left: 4px; right: -4px; bottom: -4px;
-      border: 1px solid var(--border2);
-      z-index: -1;
-      pointer-events: none;
+    /* Ornamen pemisah antar section */
+    .pemisah {
+      text-align: center;
+      padding: 0.5rem 0;
+      font-size: 0.55rem; letter-spacing: 6px;
+      color: var(--accent); opacity: 0.45;
     }
 
-    /* ── ABOUT ── */
+    /* ══ ABOUT ══ */
     #about { background: var(--bg2); }
 
     .about-grid {
       display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 5rem; align-items: center;
+      gap: 5rem; align-items: start;
       max-width: 1100px; margin: 0 auto;
-      position: relative;
     }
 
     .about-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 2px;
       padding: 2.5rem;
       position: relative; overflow: hidden;
     }
-    /* Manga panel top accent */
     .about-card::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+      position: absolute; top:0; left:0; right:0; height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3));
     }
-    /* Corner fold */
+    /* Corner fold — ceplok style */
     .about-card::after {
-      content: '';
-      position: absolute; bottom: 0; right: 0;
-      width: 0; height: 0;
-      border-style: solid;
-      border-width: 0 0 32px 32px;
-      border-color: transparent transparent var(--bg2) transparent;
+      content: '◈';
+      position: absolute; bottom:0.8rem; right:0.8rem;
+      font-size: 1.2rem; color: var(--accent); opacity: 0.2;
     }
 
     .about-text h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.6rem; font-weight: 700;
+      font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700;
       color: var(--heading); margin-bottom: 1rem;
     }
-    .about-text p { color: var(--text); line-height: 1.85; margin-bottom: 1.2rem; opacity: 0.85; }
+    .about-text p { font-style: italic; line-height: 1.9; margin-bottom: 1.2rem; opacity: 0.85; }
 
-    .about-info { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-    .info-row { display: flex; align-items: center; gap: 1rem; font-family: 'Space Mono', monospace; font-size: 0.78rem; }
-    .info-label { color: var(--muted); width: 80px; flex-shrink: 0; }
-    .info-val { color: var(--text); }
-    .info-val a { color: var(--accent); text-decoration: none; }
-    .info-val a:hover { text-decoration: underline; }
+    .about-info { display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem; }
+    .info-row { display:flex; align-items:center; gap:1rem; font-family:'Space Mono',monospace; font-size:0.76rem; }
+    .info-label { color:var(--muted); width:80px; flex-shrink:0; }
+    .info-val { color:var(--text); }
+    .info-val a { color:var(--accent); text-decoration:none; }
+    .info-val a:hover { text-decoration:underline; }
 
-    /* Stat bars (RPG style) */
-    .stat-bars { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .stat-bar-item { }
-    .stat-bar-head { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-bottom: 0.25rem; }
-    .stat-bar-head span:last-child { color: var(--accent); }
-    .stat-bar-track { height: 4px; background: rgba(255,107,157,0.1); border-radius: 2px; overflow: hidden; }
-    .stat-bar-fill {
+    /* Watak / RPG stat bars Jawa style */
+    .watak-bars { margin-top:1.5rem; display:flex; flex-direction:column; gap:0.7rem; }
+    .watak-item {}
+    .watak-head { display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:0.63rem; color:var(--muted); margin-bottom:0.3rem; }
+    .watak-head span:last-child { color:var(--accent); }
+    .watak-track { height: 3px; background: rgba(200,146,42,0.12); position:relative; overflow:hidden; }
+    .watak-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1.2s cubic-bezier(0.16,1,0.3,1);
+      background: linear-gradient(90deg, var(--accent2), var(--accent), #E8B84B);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
     }
-    .stat-bar-fill.animate { transform: scaleX(1); }
+    .watak-fill.animate { transform: scaleX(1); }
 
-    /* ── SKILLS ── */
-    #skills { }
-
-    .skills-container { max-width: 1100px; margin: 0 auto; }
-
-    .skill-group { margin-bottom: 2.5rem; }
+    /* ══ SKILLS ══ */
+    .skills-container { max-width:1100px; margin:0 auto; }
+    .skill-group { margin-bottom:2.5rem; }
     .skill-group-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem; color: var(--accent2);
-      letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      font-family: 'Space Mono', monospace; font-size:0.65rem;
+      color: var(--accent3); letter-spacing:2.5px; text-transform:uppercase;
+      margin-bottom:1rem; padding-bottom:0.5rem;
       border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 0.6rem;
+      display:flex; align-items:center; gap:0.6rem;
     }
-    .skill-group-title::before { content: '//'; color: var(--muted); }
+    .skill-group-title::before { content:'◆'; color:var(--accent); font-size:0.5rem; }
 
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .skills-grid { display:flex; flex-wrap:wrap; gap:0.6rem; }
 
     .skill-badge {
-      display: flex; align-items: center; gap: 0.5rem;
-      background: var(--card);
-      border: 1px solid var(--border2);
-      border-radius: 2px;
+      display:flex; align-items:center; gap:0.5rem;
+      background: var(--card); border:1px solid var(--border2);
       padding: 0.6rem 1.1rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem; color: var(--text);
-      transition: all 0.25s; cursor: default;
-      position: relative; overflow: hidden;
+      font-family: 'Space Mono', monospace; font-size:0.73rem; color:var(--text);
+      transition: all 0.25s; cursor:default; position:relative; overflow:hidden;
     }
-    .skill-badge::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    .skill-badge::before {
+      content:'';
+      position:absolute; left:0; top:0; bottom:0; width:2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent3));
       opacity: 0; transition: opacity 0.25s;
     }
     .skill-badge:hover {
-      border-color: var(--accent);
-      color: #fff;
-      transform: translateY(-2px) skewX(-2deg);
-      box-shadow: 0 6px 20px rgba(255,107,157,0.2);
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(200,146,42,0.06);
+      transform: translateX(3px);
+      box-shadow: -3px 0 15px rgba(200,146,42,0.15);
     }
-    .skill-badge:hover::after { opacity: 0.12; }
-    .skill-badge span { position: relative; z-index: 1; }
-    .skill-badge-text { position: relative; z-index: 1; }
+    .skill-badge:hover::before { opacity:1; }
 
-    /* ── PROJECTS ── */
+    /* ══ PROJECTS ══ */
     #projects { background: var(--bg2); }
 
     .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap:1.5rem; max-width:1100px; margin:0 auto;
     }
 
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--border2);
-      border-radius: 2px;
-      padding: 2rem;
-      transition: all 0.35s;
-      position: relative; overflow: hidden;
-      cursor: pointer;
+      background: var(--card); border:1px solid var(--border2);
+      padding: 2rem; transition: all 0.35s;
+      position: relative; overflow: hidden; cursor: pointer;
     }
-    /* Manga speedlines on hover */
-    .project-card::after {
-      content: '';
-      position: absolute; top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,107,157,0.05), transparent);
-      transition: left 0.5s;
-    }
-    .project-card:hover::after { left: 150%; }
     .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+      content:'';
+      position:absolute; top:0; left:0; right:0; height:2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3));
+      transform: scaleX(0); transform-origin:left; transition: transform 0.35s;
     }
-    .project-card:hover { border-color: rgba(255,107,157,0.35); transform: translateY(-4px) skewY(-0.3deg); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(255,107,157,0.08); }
-    .project-card:hover::before { transform: scaleX(1); }
+    .project-card::after {
+      content:'◈';
+      position:absolute; top:0.75rem; right:0.75rem;
+      font-size:0.8rem; color:var(--accent); opacity:0.15;
+      transition: opacity 0.35s;
+    }
+    .project-card:hover { border-color:rgba(200,146,42,0.45); transform:translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 20px rgba(200,146,42,0.06); }
+    .project-card:hover::before { transform:scaleX(1); }
+    .project-card:hover::after { opacity:0.4; }
 
     .project-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, rgba(255,107,157,0.12), rgba(199,125,255,0.12));
-      border: 1px solid rgba(255,107,157,0.2);
-      border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 1.25rem;
+      width:46px; height:46px;
+      background:linear-gradient(135deg,rgba(200,146,42,0.12),rgba(74,124,89,0.1));
+      border:1px solid rgba(200,146,42,0.2);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; margin-bottom:1.25rem;
     }
-    .project-name { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.35rem; }
-    .project-client { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 1px; margin-bottom: 1rem; }
-    .project-desc { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.25rem; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-name { font-family:'Cinzel',serif; font-size:1rem; font-weight:700; color:var(--heading); margin-bottom:0.3rem; letter-spacing:1px; }
+    .project-client { font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--accent); letter-spacing:1px; margin-bottom:0.9rem; }
+    .project-desc { font-style:italic; color:var(--muted); font-size:0.85rem; line-height:1.75; margin-bottom:1.25rem; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:0.35rem; }
     .tag {
-      background: rgba(199,125,255,0.08);
-      border: 1px solid rgba(199,125,255,0.2);
-      border-radius: 2px;
-      padding: 0.2rem 0.65rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.63rem; color: var(--accent2);
-      letter-spacing: 0.5px;
+      background:rgba(74,124,89,0.1); border:1px solid rgba(74,124,89,0.25);
+      padding:0.2rem 0.65rem;
+      font-family:'Space Mono',monospace; font-size:0.62rem; color:var(--accent3); letter-spacing:0.5px;
     }
 
-    /* ── EXPERIENCE ── */
-    #experience { }
-
-    .timeline { max-width: 800px; margin: 0 auto; position: relative; }
+    /* ══ EXPERIENCE ══ */
+    .timeline { max-width:800px; margin:0 auto; position:relative; }
     .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: 12px; bottom: 0; width: 1px;
-      background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+      content:'';
+      position:absolute; left:0; top:12px; bottom:0; width:1px;
+      background:linear-gradient(180deg, var(--accent), var(--accent3), transparent);
     }
-
-    .timeline-item { padding-left: 2.5rem; margin-bottom: 3rem; position: relative; }
+    .timeline-item { padding-left:2.5rem; margin-bottom:3rem; position:relative; }
     .timeline-item::before {
-      content: '◆';
-      position: absolute; left: -7px; top: 6px;
-      color: var(--accent);
-      font-size: 0.65rem;
+      content:'◈';
+      position:absolute; left:-7px; top:4px;
+      color:var(--accent); font-size:0.65rem;
     }
+    .timeline-period { font-family:'Space Mono',monospace; font-size:0.66rem; color:var(--accent); letter-spacing:1.5px; margin-bottom:0.4rem; }
+    .timeline-role { font-family:'Cinzel',serif; font-size:1.05rem; font-weight:700; color:var(--heading); margin-bottom:0.2rem; letter-spacing:1px; }
+    .timeline-company { font-family:'Space Mono',monospace; font-size:0.76rem; color:var(--accent3); margin-bottom:0.75rem; }
+    .timeline-desc { color:var(--muted); font-size:0.875rem; line-height:1.8; font-style:italic; }
+    .timeline-desc li { margin-bottom:0.4rem; padding-left:1.2rem; position:relative; list-style:none; }
+    .timeline-desc li::before { content:'→'; position:absolute; left:0; color:var(--accent); font-size:0.7rem; top:2px; }
 
-    .timeline-period { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 1px; margin-bottom: 0.4rem; }
-    .timeline-role { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.2rem; }
-    .timeline-company { font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.75rem; }
-    .timeline-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.75; }
-    .timeline-desc li { margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative; list-style: none; }
-    .timeline-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 2px; }
-
-    /* ── SOFT SKILLS ── */
-    #soft-skills { background: var(--bg2); }
-
-    /* ── PLAYGROUND ── */
+    /* ══ PLAYGROUND ══ */
     #playground {
       background: var(--bg);
-      display: flex; flex-direction: column; align-items: center;
+      display:flex; flex-direction:column; align-items:center;
     }
-    .game-wrapper { width: 100%; max-width: 520px; }
-
+    .game-wrapper { width:100%; max-width:520px; }
     .game-hud {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 0.75rem; padding: 0.6rem 1.2rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      font-family: 'Space Mono', monospace; font-size: 0.75rem;
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:0.75rem; padding:0.6rem 1.2rem;
+      background:var(--card); border:1px solid var(--border);
+      font-family:'Space Mono',monospace; font-size:0.75rem;
     }
-    .hud-item { display: flex; gap: 0.5rem; align-items: center; }
-    .hud-label { color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-    .hud-value { color: var(--accent); font-weight: 700; font-size: 1rem; min-width: 2.5ch; text-align: right; }
-    .hud-level { color: var(--accent2) !important; }
-
+    .hud-item { display:flex; gap:0.5rem; align-items:center; }
+    .hud-label { color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+    .hud-value { color:var(--accent); font-weight:700; font-size:1rem; min-width:2.5ch; text-align:right; }
+    .hud-level { color:var(--accent3) !important; }
     .canvas-frame {
-      position: relative;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-      background: #060412;
-      box-shadow: 0 0 0 1px rgba(255,107,157,0.06), 0 0 50px rgba(255,107,157,0.08), inset 0 0 60px rgba(0,0,0,0.6);
+      position:relative; border:1px solid var(--border); overflow:hidden;
+      background:#0E0A02;
+      box-shadow: 0 0 0 1px rgba(200,146,42,0.06), 0 0 50px rgba(200,146,42,0.07), inset 0 0 60px rgba(0,0,0,0.7);
     }
-    #gameCanvas { display: block; width: 100%; height: auto; image-rendering: pixelated; }
-
+    #gameCanvas { display:block; width:100%; height:auto; image-rendering:pixelated; }
     .game-overlay {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(6,4,18,0.9);
-      backdrop-filter: blur(8px);
-      z-index: 10; transition: opacity 0.25s;
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(14,10,2,0.92); backdrop-filter:blur(8px);
+      z-index:10; transition:opacity 0.25s;
     }
-    .game-overlay.hidden { opacity: 0; pointer-events: none; }
-    .overlay-box { text-align: center; padding: 2.5rem 2rem; max-width: 300px; }
-    .overlay-icon { font-size: 2.8rem; margin-bottom: 0.75rem; display: block; }
-    .overlay-title { font-family: 'Noto Serif JP', serif; font-size: 1.4rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
-    .overlay-sub { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.75rem; }
-    .overlay-sub .hl { color: var(--accent2); }
-
-    .game-controls { margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
-    .ctrl-row { display: flex; gap: 0.35rem; }
+    .game-overlay.hidden { opacity:0; pointer-events:none; }
+    .overlay-box { text-align:center; padding:2.5rem 2rem; max-width:310px; }
+    .overlay-icon { font-size:2.5rem; margin-bottom:0.75rem; display:block; }
+    .overlay-title { font-family:'Cinzel',serif; font-size:1.35rem; font-weight:700; color:var(--heading); margin-bottom:0.5rem; letter-spacing:2px; }
+    .overlay-sub { font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--muted); line-height:1.75; margin-bottom:1.75rem; font-style:italic; }
+    .overlay-sub .hl { color:var(--accent); }
+    .game-controls { margin-top:1rem; display:flex; flex-direction:column; align-items:center; gap:0.35rem; }
+    .ctrl-row { display:flex; gap:0.35rem; }
     .ctrl-btn {
-      width: 48px; height: 48px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--text); font-size: 1.1rem;
-      cursor: pointer; transition: all 0.12s;
-      display: flex; align-items: center; justify-content: center;
-      user-select: none; -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-      font-family: 'Space Mono', monospace;
+      width:48px; height:48px;
+      background:var(--card); border:1px solid var(--border);
+      color:var(--text); font-size:1rem; cursor:pointer;
+      transition:all 0.12s;
+      display:flex; align-items:center; justify-content:center;
+      user-select:none; touch-action:manipulation;
+      font-family:'Space Mono',monospace;
+      -webkit-tap-highlight-color: transparent;
     }
     .ctrl-btn:active, .ctrl-btn.pressed {
-      background: rgba(255,107,157,0.15);
-      border-color: var(--accent); color: var(--accent);
-      transform: scale(0.91);
+      background:rgba(200,146,42,0.15);
+      border-color:var(--accent); color:var(--accent);
+      transform:scale(0.91);
     }
 
-    /* ── CONTACT ── */
-    #contact { background: var(--bg2); }
-
-    .contact-wrapper {
-      max-width: 900px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.5fr;
-      gap: 4rem; align-items: start;
-    }
-    .contact-info h3 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 700; color: var(--heading); margin-bottom: 1rem; }
-    .contact-info p { color: var(--muted); line-height: 1.8; margin-bottom: 2rem; font-size: 0.9rem; }
-    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-link { display: flex; align-items: center; gap: 1rem; color: var(--text); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.78rem; transition: color 0.3s; }
-    .contact-link:hover { color: var(--accent); }
-    .contact-link-icon { width: 38px; height: 38px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.3s; flex-shrink: 0; }
-    .contact-link:hover .contact-link-icon { border-color: var(--accent); background: rgba(255,107,157,0.08); }
-
-    .contact-form { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 2.5rem; position: relative; }
-    .contact-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3)); }
-
-    .form-group { margin-bottom: 1.5rem; }
-    .form-label { display: block; font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    /* ══ CONTACT ══ */
+    #contact { background:var(--bg2); }
+    .contact-wrapper { max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start; }
+    .contact-info h3 { font-family:'Cinzel',serif; font-size:1.25rem; font-weight:700; color:var(--heading); margin-bottom:1rem; letter-spacing:1px; }
+    .contact-info p { font-style:italic; color:var(--muted); line-height:1.85; margin-bottom:2rem; font-size:0.9rem; }
+    .contact-links { display:flex; flex-direction:column; gap:1rem; }
+    .contact-link { display:flex; align-items:center; gap:1rem; color:var(--text); text-decoration:none; font-family:'Space Mono',monospace; font-size:0.76rem; transition:color 0.3s; }
+    .contact-link:hover { color:var(--accent); }
+    .contact-link-icon { width:38px; height:38px; background:var(--card); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:all 0.3s; flex-shrink:0; }
+    .contact-link:hover .contact-link-icon { border-color:var(--accent); background:rgba(200,146,42,0.08); }
+    .contact-form { background:var(--card); border:1px solid var(--border); padding:2.5rem; position:relative; }
+    .contact-form::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent3)); }
+    .form-group { margin-bottom:1.5rem; }
+    .form-label { display:block; font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.5rem; }
     .form-input, .form-textarea {
-      width: 100%; background: var(--bg);
-      border: 1px solid var(--border); border-radius: 2px;
-      padding: 0.85rem 1rem; color: var(--text);
-      font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.9rem;
-      transition: border-color 0.3s, box-shadow 0.3s; outline: none; resize: none;
+      width:100%; background:var(--bg); border:1px solid var(--border);
+      padding:0.85rem 1rem; color:var(--text);
+      font-family:'IM Fell English',serif; font-size:0.9rem; font-style:italic;
+      transition:border-color 0.3s, box-shadow 0.3s; outline:none; resize:none;
     }
-    .form-input:focus, .form-textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,107,157,0.08); }
-    .form-textarea { height: 130px; }
+    .form-input:focus, .form-textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(200,146,42,0.08); }
+    .form-textarea { height:130px; }
     .form-submit {
-      width: 100%; background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff; border: none; border-radius: 2px; padding: 1rem;
-      font-family: 'Space Mono', monospace; font-size: 0.78rem;
-      font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      cursor: pointer; transition: all 0.3s;
-      box-shadow: 0 0 20px rgba(255,107,157,0.25);
+      width:100%; background:linear-gradient(135deg,var(--accent),#B8821E);
+      color:#1A1208; border:none; padding:1rem;
+      font-family:'Space Mono',monospace; font-size:0.76rem;
+      font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+      cursor:pointer; transition:all 0.3s;
+      box-shadow:0 0 20px rgba(200,146,42,0.25);
     }
-    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(255,107,157,0.45); }
+    .form-submit:hover { transform:translateY(-2px); box-shadow:0 0 35px rgba(200,146,42,0.45); }
 
-    /* ── FOOTER ── */
+    /* ══ FOOTER ══ */
     footer {
-      padding: 3rem 5%;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      position: relative; z-index: 1;
+      padding:2.5rem 5%;
+      border-top:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+      position:relative; z-index:1;
     }
-    .footer-copy { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); }
-    .footer-copy span { color: var(--accent); }
-    .footer-jp { font-family: 'Noto Serif JP', serif; font-size: 0.65rem; color: var(--muted); opacity: 0.5; letter-spacing: 3px; }
+    footer::before {
+      content:'◈ ── ── ◈ ── ── ◈';
+      position:absolute; top:-0.5rem; left:50%;
+      transform:translateX(-50%);
+      font-size:0.5rem; color:var(--accent);
+      background:var(--bg); padding:0 0.5rem;
+      letter-spacing:4px; opacity:0.5; white-space:nowrap;
+    }
+    .footer-copy { font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--muted); }
+    .footer-copy span { color:var(--accent); }
+    .footer-jv { font-family:'IM Fell English',serif; font-style:italic; font-size:0.75rem; color:var(--muted); opacity:0.55; }
 
-    /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .fade-in-delay-1 { transition-delay: 0.1s; }
-    .fade-in-delay-2 { transition-delay: 0.2s; }
-    .fade-in-delay-3 { transition-delay: 0.3s; }
-    .fade-in-delay-4 { transition-delay: 0.4s; }
+    /* ══ FADE IN ══ */
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .fade-in-delay-1 { transition-delay:0.1s; }
+    .fade-in-delay-2 { transition-delay:0.2s; }
+    .fade-in-delay-3 { transition-delay:0.3s; }
+    .fade-in-delay-4 { transition-delay:0.4s; }
 
-    /* ── MOBILE MENU ── */
-    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg); padding: 100px 5% 5%; flex-direction: column; gap: 1.5rem; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--text); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 1rem; transition: color 0.3s; }
-    .mobile-menu a:hover { color: var(--accent); }
+    /* ══ MOBILE ══ */
+    .mobile-menu { display:none; position:fixed; inset:0; z-index:199; background:var(--bg); padding:100px 5% 5%; flex-direction:column; gap:1.5rem; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-family:'Space Mono',monospace; font-size:1rem; color:var(--text); text-decoration:none; letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid var(--border); padding-bottom:1rem; transition:color 0.3s; }
+    .mobile-menu a:hover { color:var(--accent); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; text-align: center; }
-      .hero-visual { display: none; }
-      .hero-cta { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .hero-tagline { margin: 0 auto 2.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .contact-wrapper { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .hero-content { grid-template-columns:1fr; text-align:center; }
+      .hero-visual { display:none; }
+      .hero-cta { justify-content:center; }
+      .hero-stats { justify-content:center; }
+      .hero-tagline { margin:0 auto 2.5rem; }
+      .about-grid { grid-template-columns:1fr; gap:2rem; }
+      .contact-wrapper { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      footer { flex-direction:column; gap:1rem; text-align:center; }
+      .aksara-deco { justify-content:center; }
     }
     @media (max-width: 600px) {
-      section { padding: 70px 5%; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .hero-name { font-size: 2.5rem; }
+      section { padding:70px 5%; }
+      .projects-grid { grid-template-columns:1fr; }
+      .hero-name { font-size:2.4rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- FLOATING SAKURA -->
-<div class="sakura-field" aria-hidden="true">
-  <span class="petal">🌸</span>
-  <span class="petal">✿</span>
-  <span class="petal">🌸</span>
-  <span class="petal">✾</span>
-  <span class="petal">🌸</span>
-  <span class="petal">✿</span>
-  <span class="petal">🌸</span>
-  <span class="petal">✾</span>
-  <span class="petal">🌸</span>
-  <span class="petal">✿</span>
+<!-- DAUN GUGUR -->
+<div class="daun-field" aria-hidden="true">
+  <span class="daun">🍂</span>
+  <span class="daun">🍃</span>
+  <span class="daun">🍂</span>
+  <span class="daun">🌿</span>
+  <span class="daun">🍂</span>
+  <span class="daun">🍃</span>
+  <span class="daun">🍂</span>
+  <span class="daun">🌿</span>
+  <span class="daun">🍂</span>
+  <span class="daun">🍃</span>
 </div>
 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <div>
-      <span class="nav-logo-jp">ウィジャヤ</span>
-      <span class="nav-logo-en">Yahya.</span>
-    </div>
+    <span class="nav-logo-jv">Yahya Wijaya</span>
+    <span class="nav-logo-sub">Insinyur Piranti Lunak</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">Bab Kula</a></li>
+    <li><a href="#skills">Kawruh</a></li>
+    <li><a href="#projects">Karya</a></li>
+    <li><a href="#experience">Lelampahan</a></li>
+    <li><a href="#contact">Serat</a></li>
   </ul>
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme"></button>
+    <button class="theme-toggle" id="themeToggle" title="Ganti tema"></button>
     <button class="hamburger" id="hamburger" title="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -860,73 +809,64 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about"      onclick="closeMobileMenu()">About</a>
-  <a href="#skills"     onclick="closeMobileMenu()">Skills</a>
-  <a href="#projects"   onclick="closeMobileMenu()">Projects</a>
-  <a href="#experience" onclick="closeMobileMenu()">Experience</a>
-  <a href="#contact"    onclick="closeMobileMenu()">Contact</a>
+  <a href="#about"      onclick="closeMobileMenu()">Bab Kula</a>
+  <a href="#skills"     onclick="closeMobileMenu()">Kawruh</a>
+  <a href="#projects"   onclick="closeMobileMenu()">Karya</a>
+  <a href="#experience" onclick="closeMobileMenu()">Lelampahan</a>
+  <a href="#contact"    onclick="closeMobileMenu()">Serat</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
-  <div class="hero-slash"></div>
-  <span class="kanji-deco" style="right:-2%; top:10%; transform:rotate(5deg);">開発</span>
-  <span class="kanji-deco" style="left:-1%; bottom:5%; font-size:8rem;">技術</span>
+  <div class="hero-parang"></div>
+  <span class="wayang-deco" style="right:-3%;top:5%;transform:rotate(3deg)">𓂀</span>
+  <span class="wayang-deco" style="left:-2%;bottom:3%;font-size:14rem;opacity:0.02">☽</span>
 
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-badge fade-in">利用可能 — Available for work</div>
+      <div class="aksara-deco fade-in">Kados Dawuhe Para Leluhur</div>
+      <div class="hero-badge fade-in">Saged Dipun-ajak Gawe</div>
       <h1 class="hero-name fade-in fade-in-delay-1">
-        <span class="hero-name-jp">ソフトウェアエンジニア</span>
+        <span class="hero-name-jv">Insinyur Piranti Lunak</span>
         Yahya<br><span class="accent-text">Wijaya</span>
       </h1>
       <p class="hero-role fade-in fade-in-delay-2">
-        Software Engineer &nbsp;/&nbsp; <span>Backend Developer</span>
+        Software Engineer &nbsp;·&nbsp; <span>Backend Developer</span>
       </p>
       <p class="hero-tagline fade-in fade-in-delay-3">
-        「Dedicated to writing clean, maintainable code and delivering high-quality software solutions.」
+        Anggayuh kode kang resik lan tansah bisa dijaga, sarta ngaturaken piranti lunak kang berkualitas inggil.
+        <br><em style="font-size:0.8em;opacity:0.6">"Dedicated to clean, maintainable code and high-quality solutions."</em>
       </p>
       <div class="hero-cta fade-in fade-in-delay-4">
-        <a href="#contact" class="btn btn-primary">採用する — Hire Me →</a>
-        <a href="asset/Yahya-Wijaya-CV-2026.pdf" class="btn btn-outline" download>履歴書 — Download CV</a>
+        <a href="#contact" class="btn btn-primary">◈ Tanggap Damel →</a>
+        <a href="asset/Yahya-Wijaya-CV-2026.pdf" class="btn btn-outline" download>Serat Lamar ↓</a>
       </div>
       <div class="hero-stats fade-in fade-in-delay-4">
-        <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Exp</div></div>
-        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Key Projects</div></div>
-        <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Clients</div></div>
+        <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Taun Pangalaman</div></div>
+        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Proyek Utama</div></div>
+        <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Para Pelanggan</div></div>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="avatar-frame">
-        <!-- Hex ring SVG -->
-        <div class="avatar-hex">
-          <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="190,10 355,100 355,280 190,370 25,280 25,100" stroke="rgba(255,107,157,0.25)" stroke-width="1.5" fill="none" stroke-dasharray="8 4"/>
-          </svg>
-        </div>
-        <div class="avatar-hex2">
-          <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="210,10 395,110 395,310 210,410 25,310 25,110" stroke="rgba(199,125,255,0.15)" stroke-width="1" fill="none" stroke-dasharray="4 8"/>
-          </svg>
-        </div>
+        <div class="avatar-ring-outer"></div>
+        <div class="avatar-ring-inner"></div>
         <div class="avatar-img">
           <img src="asset/foto.jpg" alt="Yahya Wijaya" />
         </div>
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <!-- Floating status cards -->
-        <div class="status-card sc-top">
-          <span class="sc-label">STATUS</span>
-          <span class="sc-val">● ONLINE</span>
+        <div class="koro koro-tl"></div>
+        <div class="koro koro-tr"></div>
+        <div class="koro koro-bl"></div>
+        <div class="koro koro-br"></div>
+        <div class="info-float if-top">
+          <span class="if-label">KAWONTENAN</span>
+          <span class="if-val">◈ WONTEN</span>
         </div>
-        <div class="status-card sc-bottom">
-          <span class="sc-label">CLASS</span>
-          <span class="sc-val">Backend Dev</span>
+        <div class="info-float if-bottom">
+          <span class="if-label">KALUNGGUHAN</span>
+          <span class="if-val">Backend Dev</span>
         </div>
       </div>
     </div>
@@ -937,42 +877,41 @@
 <section id="about">
   <div class="about-grid">
     <div class="fade-in">
-      <div class="section-label">01 — About Me</div>
+      <div class="section-label">01 — Bab Kula</div>
       <h2 class="section-title">
-        <span class="jp">バックエンド設計者</span>
-        Backend Architect &amp; Problem Solver.
+        <span class="jv">Pangripta Backend & Pemikir Ulung</span>
+        Arsitek Sistem & Pemecah Masalah.
       </h2>
-      <p class="section-desc">Mission-critical applications where precision and reliability are key. Driven by the challenge of optimizing backend processes and ensuring seamless data integration.</p>
+      <p class="section-desc">Kula gadhah pengalaman nggarap aplikasi kritis, ing pundi katepatan lan kapercayan dados kunci. Kanthi semangat ngoptimalake proses backend lan njamin integrasi data kang lancar.</p>
 
-      <!-- RPG-style skill bars -->
-      <div class="stat-bars">
-        <div class="stat-bar-item">
-          <div class="stat-bar-head"><span>Java / Spring Boot</span><span>95</span></div>
-          <div class="stat-bar-track"><div class="stat-bar-fill" style="--w:0.95"></div></div>
+      <div class="watak-bars">
+        <div class="watak-item">
+          <div class="watak-head"><span>Java / Spring Boot</span><span>95</span></div>
+          <div class="watak-track"><div class="watak-fill"></div></div>
         </div>
-        <div class="stat-bar-item">
-          <div class="stat-bar-head"><span>Golang</span><span>80</span></div>
-          <div class="stat-bar-track"><div class="stat-bar-fill" style="--w:0.80"></div></div>
+        <div class="watak-item">
+          <div class="watak-head"><span>Golang</span><span>80</span></div>
+          <div class="watak-track"><div class="watak-fill" style="--w:0.80"></div></div>
         </div>
-        <div class="stat-bar-item">
-          <div class="stat-bar-head"><span>TIBCO / Integration</span><span>85</span></div>
-          <div class="stat-bar-track"><div class="stat-bar-fill" style="--w:0.85"></div></div>
+        <div class="watak-item">
+          <div class="watak-head"><span>TIBCO / Integrasi</span><span>85</span></div>
+          <div class="watak-track"><div class="watak-fill" style="--w:0.85"></div></div>
         </div>
-        <div class="stat-bar-item">
-          <div class="stat-bar-head"><span>Database (SQL / Oracle)</span><span>88</span></div>
-          <div class="stat-bar-track"><div class="stat-bar-fill" style="--w:0.88"></div></div>
+        <div class="watak-item">
+          <div class="watak-head"><span>Database (SQL / Oracle)</span><span>88</span></div>
+          <div class="watak-track"><div class="watak-fill" style="--w:0.88"></div></div>
         </div>
       </div>
     </div>
 
     <div class="about-card fade-in fade-in-delay-2">
       <div class="about-text">
-        <h3>こんにちは、Yahyaです 👋</h3>
-        <p>I'm a Back-End Developer dedicated to writing clean, maintainable code. I specialize in Java Spring Boot and have a strong background in building enterprise-grade solutions.</p>
-        <p>Currently working as a Junior Consultant at PT PHINCON, I've had the opportunity to work with major clients like Telkomsel, BNI, and BCA, focusing on API development, system enhancement, and performance optimization.</p>
+        <h3>Sugeng Tepang, Kula Yahya 🙏</h3>
+        <p>Kula minangka Backend Developer kang tansah anggayuh kode resik lan gampang dijaga. Kula ahli ing Java Spring Boot lan gadhah latar belakang kuat ing pembangunan solusi tingkat perusahaan.</p>
+        <p>Ing samangke kula nyambut damel dados Junior Consultant ing PT PHINCON, kanthi pengalaman nyambut damel kaliyan pelanggan ageng kados Telkomsel, BNI, lan BCA, fokus ing pengembangan API, peningkatan sistem, lan optimasi kinerja.</p>
         <div class="about-info">
-          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Jakarta, Indonesia 🇮🇩</span></div>
-          <div class="info-row"><span class="info-label">Email</span><span class="info-val"><a href="mailto:yahyawijaya082@gmail.com">yahyawijaya082@gmail.com</a></span></div>
+          <div class="info-row"><span class="info-label">Panggonan</span><span class="info-val">Jakarta, Indonesia 🇮🇩</span></div>
+          <div class="info-row"><span class="info-label">Serat-El</span><span class="info-val"><a href="mailto:yahyawijaya082@gmail.com">yahyawijaya082@gmail.com</a></span></div>
           <div class="info-row"><span class="info-label">LinkedIn</span><span class="info-val"><a href="https://www.linkedin.com/in/yahyawijaya082" target="_blank">Yahya Wijaya</a></span></div>
         </div>
       </div>
@@ -980,56 +919,57 @@
   </div>
 </section>
 
+<div class="pemisah" style="background:var(--bg2);padding:1.5rem;position:relative;z-index:1">
+  ◈ ── ── ✦ KAWRUH LAN KATRAMPILAN ✦ ── ── ◈
+</div>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="skills-container">
     <div class="section-header fade-in">
-      <div class="section-label">02 — Skills</div>
+      <div class="section-label">02 — Kawruh</div>
       <h2 class="section-title">
-        <span class="jp">スキルツリー</span>
-        Tech Proficiency
+        <span class="jv">Katrampilan Teknis</span>
+        Keahlian Teknologi
       </h2>
     </div>
 
     <div class="skill-group fade-in">
-      <div class="skill-group-title">Programming Languages</div>
+      <div class="skill-group-title">Basa Pamrograman</div>
       <div class="skills-grid">
-        <div class="skill-badge"><span>☕</span><span class="skill-badge-text">Java</span></div>
-        <div class="skill-badge"><span>🐹</span><span class="skill-badge-text">Golang</span></div>
-        <div class="skill-badge"><span>🟦</span><span class="skill-badge-text">TypeScript</span></div>
-        <div class="skill-badge"><span>🐘</span><span class="skill-badge-text">PHP</span></div>
+        <div class="skill-badge"><span>☕</span> Java</div>
+        <div class="skill-badge"><span>🐹</span> Golang</div>
+        <div class="skill-badge"><span>🟦</span> TypeScript</div>
+        <div class="skill-badge"><span>🐘</span> PHP</div>
       </div>
     </div>
-
     <div class="skill-group fade-in fade-in-delay-1">
-      <div class="skill-group-title">Frameworks & Technologies</div>
+      <div class="skill-group-title">Kerangka Kerja & Teknologi</div>
       <div class="skills-grid">
-        <div class="skill-badge"><span>🌱</span><span class="skill-badge-text">Spring Boot</span></div>
-        <div class="skill-badge"><span>🌀</span><span class="skill-badge-text">Zend Framework</span></div>
-        <div class="skill-badge"><span>⚙️</span><span class="skill-badge-text">TIBCO BusinessWorks</span></div>
-        <div class="skill-badge"><span>⚡</span><span class="skill-badge-text">TIBCO BusinessEvent</span></div>
+        <div class="skill-badge"><span>🌱</span> Spring Boot</div>
+        <div class="skill-badge"><span>🌀</span> Zend Framework</div>
+        <div class="skill-badge"><span>⚙️</span> TIBCO BusinessWorks</div>
+        <div class="skill-badge"><span>⚡</span> TIBCO BusinessEvent</div>
       </div>
     </div>
-
     <div class="skill-group fade-in fade-in-delay-2">
-      <div class="skill-group-title">Database</div>
+      <div class="skill-group-title">Pangkalan Data</div>
       <div class="skills-grid">
-        <div class="skill-badge"><span>🐘</span><span class="skill-badge-text">PostgreSQL</span></div>
-        <div class="skill-badge"><span>🐬</span><span class="skill-badge-text">MySQL</span></div>
-        <div class="skill-badge"><span>🔴</span><span class="skill-badge-text">Redis</span></div>
-        <div class="skill-badge"><span>🅾️</span><span class="skill-badge-text">Oracle</span></div>
-        <div class="skill-badge"><span>📊</span><span class="skill-badge-text">SQL</span></div>
+        <div class="skill-badge"><span>🐘</span> PostgreSQL</div>
+        <div class="skill-badge"><span>🐬</span> MySQL</div>
+        <div class="skill-badge"><span>🔴</span> Redis</div>
+        <div class="skill-badge"><span>🅾️</span> Oracle</div>
+        <div class="skill-badge"><span>📊</span> SQL</div>
       </div>
     </div>
-
     <div class="skill-group fade-in fade-in-delay-3">
-      <div class="skill-group-title">Tools & Others</div>
+      <div class="skill-group-title">Piranti & Sanesipun</div>
       <div class="skills-grid">
-        <div class="skill-badge"><span>🐙</span><span class="skill-badge-text">Git</span></div>
-        <div class="skill-badge"><span>📬</span><span class="skill-badge-text">Postman</span></div>
-        <div class="skill-badge"><span>📖</span><span class="skill-badge-text">Swagger</span></div>
-        <div class="skill-badge"><span>📋</span><span class="skill-badge-text">Trello</span></div>
-        <div class="skill-badge"><span>🔌</span><span class="skill-badge-text">TIBCO EMS</span></div>
+        <div class="skill-badge"><span>🐙</span> Git</div>
+        <div class="skill-badge"><span>📬</span> Postman</div>
+        <div class="skill-badge"><span>📖</span> Swagger</div>
+        <div class="skill-badge"><span>📋</span> Trello</div>
+        <div class="skill-badge"><span>🔌</span> TIBCO EMS</div>
       </div>
     </div>
   </div>
@@ -1038,10 +978,10 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header fade-in" style="max-width:1100px;margin:0 auto 4rem;">
-    <div class="section-label">03 — Projects</div>
+    <div class="section-label">03 — Karya</div>
     <h2 class="section-title">
-      <span class="jp">主要プロジェクト</span>
-      Key Contributions
+      <span class="jv">Sumbang Asih Utama</span>
+      Kontribusi Utama
     </h2>
   </div>
   <div class="projects-grid">
@@ -1049,35 +989,35 @@
       <div class="project-icon">📡</div>
       <div class="project-name">Notification System</div>
       <div class="project-client">Telkomsel</div>
-      <p class="project-desc">API Services Enablement to support BAU business and Notification System. Developing and enhancing backend services to ensure seamless operational continuity.</p>
+      <p class="project-desc">Pangembangan layanan API kangge nyengkuyung operasional bisnis lan Sistem Notifikasi. Ngrancang lan ningkatake layanan backend supaya lumados tanpa gandheng.</p>
       <div class="project-tags"><span class="tag">Java</span><span class="tag">Golang</span><span class="tag">Microservices</span></div>
     </div>
     <div class="project-card fade-in fade-in-delay-1">
       <div class="project-icon">🏛️</div>
       <div class="project-name">TIBCO License Renewal</div>
       <div class="project-client">BPS — Badan Pusat Statistik</div>
-      <p class="project-desc">Upgrading TIBCO products to the latest version. Creating documentation for TIBCO Enterprise Administrator and guiding installation.</p>
+      <p class="project-desc">Nganyarake produk TIBCO dhateng versi paling anyar. Damel dokumentasi kangge TIBCO Enterprise Administrator lan nuntun proses pasangipun.</p>
       <div class="project-tags"><span class="tag">TIBCO</span><span class="tag">Enterprise Admin</span></div>
     </div>
     <div class="project-card fade-in fade-in-delay-2">
       <div class="project-icon">🏦</div>
       <div class="project-name">Siebel Data View</div>
       <div class="project-client">BNI — Bank Negara Indonesia</div>
-      <p class="project-desc">Developing custom enterprise application for BNI's Pengadaan division. Building REST APIs and database views using Oracle.</p>
+      <p class="project-desc">Ngembangake aplikasi perusahaan khusus kangge divisi Pengadaan BNI. Damel REST API lan tampilan basis data ngginakaken Oracle.</p>
       <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">Oracle</span><span class="tag">REST API</span></div>
     </div>
     <div class="project-card fade-in">
       <div class="project-icon">🏢</div>
       <div class="project-name">L2 Local Support</div>
       <div class="project-client">Smartfren</div>
-      <p class="project-desc">Handling issues and reproducing TIBCO BusinessWorks 5 cases. Creating documentation and log rotation for archiving purposes.</p>
+      <p class="project-desc">Nangani masalah lan mekaraken kasus TIBCO BusinessWorks 5. Damel dokumentasi lan rotasi log kangge keperluan pengarsipan.</p>
       <div class="project-tags"><span class="tag">TIBCO BW5</span><span class="tag">L2 Support</span></div>
     </div>
     <div class="project-card fade-in fade-in-delay-1">
       <div class="project-icon">🛡️</div>
       <div class="project-name">POC Fraud Engine</div>
       <div class="project-client">BCA — Bank Central Asia</div>
-      <p class="project-desc">Reproducing and fixing issues in the Fraud Engine using TIBCO BusinessEvent and BusinessWorks.</p>
+      <p class="project-desc">Mekaraken lan ndandani masalah ing Fraud Engine ngginakaken TIBCO BusinessEvent lan BusinessWorks.</p>
       <div class="project-tags"><span class="tag">TIBCO BE</span><span class="tag">Fraud Engine</span></div>
     </div>
   </div>
@@ -1086,66 +1026,66 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header fade-in" style="max-width:800px;margin:0 auto 4rem;">
-    <div class="section-label">04 — Experience</div>
+    <div class="section-label">04 — Lelampahan</div>
     <h2 class="section-title">
-      <span class="jp">職歴</span>
-      Work History
+      <span class="jv">Riwayat Nyambut Damel</span>
+      Riwayat Kerja
     </h2>
   </div>
   <div class="timeline">
     <div class="timeline-item fade-in">
-      <div class="timeline-period">Feb 2023 — Present</div>
+      <div class="timeline-period">Feb 2023 — Samangke</div>
       <div class="timeline-role">Junior Consultant</div>
       <div class="timeline-company">PT PHINCON — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Design, develop, and maintain high-performance backend services for enterprise-scale clients.</li>
-        <li>Engineer and optimize secure RESTful APIs to facilitate seamless data exchange.</li>
-        <li>Refine backend logic and database queries to improve application response times.</li>
-        <li>Collaborate within cross-functional teams across the full SDLC.</li>
+        <li>Ngrancang, ngembangake, lan njaga layanan backend berkinerja tinggi kangge klien berskala perusahaan.</li>
+        <li>Merancang lan mengoptimalkan REST API aman kangge pertukaran data kang lancar.</li>
+        <li>Nyaring logika backend lan kueri basis data kangge ningkatake waktu respons aplikasi.</li>
+        <li>Nyambut damel ing tim lintas fungsi ing sadaya tahap SDLC.</li>
       </ul>
     </div>
     <div class="timeline-item fade-in fade-in-delay-1">
-      <div class="timeline-period">Dec 2023 — Jan 2024</div>
+      <div class="timeline-period">Des 2023 — Jan 2024</div>
       <div class="timeline-role">Backend Developer Trainee</div>
       <div class="timeline-company">PT PHINCON — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Implemented enterprise-grade integration flows using TIBCO BusinessWorks and EMS.</li>
-        <li>Built and documented RESTful APIs using Spring Boot and Spring Rest Docs.</li>
-        <li>Implemented core security protocols and web services using Spring Security.</li>
+        <li>Ngleksanakake alur integrasi tingkat perusahaan ngginakaken TIBCO BusinessWorks lan EMS.</li>
+        <li>Damel lan dokumentasi REST API ngginakaken Spring Boot lan Spring Rest Docs.</li>
+        <li>Ngleksanakake protokol keamanan inti lan layanan web ngginakaken Spring Security.</li>
       </ul>
     </div>
     <div class="timeline-item fade-in fade-in-delay-2">
-      <div class="timeline-period">Aug 2022 — Dec 2022</div>
+      <div class="timeline-period">Agust 2022 — Des 2022</div>
       <div class="timeline-role">Back End Programmer</div>
       <div class="timeline-company">Setjen DPR RI — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Contributed to the development of internal web applications using PHP and Zend Framework.</li>
-        <li>Analyzed and designed database schemas to support new application features.</li>
-        <li>Implemented version control (Git) best practices within the team.</li>
+        <li>Mbiyantu pangembangan aplikasi web internal ngginakaken PHP lan Zend Framework.</li>
+        <li>Menganalisis lan merancang skema basis data kangge fitur aplikasi anyar.</li>
+        <li>Ngleksanakake praktik terbaik kontrol versi (Git) ing tim.</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- SOFT SKILLS -->
-<section id="soft-skills" style="background: var(--bg2);">
+<section id="soft-skills" style="background:var(--bg2);">
   <div class="skills-container">
     <div class="section-header fade-in">
-      <div class="section-label">05 — Personal</div>
+      <div class="section-label">05 — Watak</div>
       <h2 class="section-title">
-        <span class="jp">ソフトスキル</span>
-        Soft Skills
+        <span class="jv">Budi Pekerti & Watak Utama</span>
+        Keterampilan Sosial
       </h2>
     </div>
     <div class="skills-grid fade-in">
-      <div class="skill-badge"><span>💡</span><span class="skill-badge-text">Problem-Solving</span></div>
-      <div class="skill-badge"><span>🧠</span><span class="skill-badge-text">Critical Thinking</span></div>
-      <div class="skill-badge"><span>🗣️</span><span class="skill-badge-text">Communication</span></div>
-      <div class="skill-badge"><span>👥</span><span class="skill-badge-text">Collaboration</span></div>
-      <div class="skill-badge"><span>📈</span><span class="skill-badge-text">Adaptability</span></div>
-      <div class="skill-badge"><span>🎯</span><span class="skill-badge-text">Attention to Detail</span></div>
-      <div class="skill-badge"><span>⏳</span><span class="skill-badge-text">Time Management</span></div>
-      <div class="skill-badge"><span>💪</span><span class="skill-badge-text">Resilience</span></div>
+      <div class="skill-badge"><span>💡</span> Pemecah Masalah</div>
+      <div class="skill-badge"><span>🧠</span> Pikir Kritis</div>
+      <div class="skill-badge"><span>🗣️</span> Komunikasi</div>
+      <div class="skill-badge"><span>👥</span> Kerja Sama</div>
+      <div class="skill-badge"><span>📈</span> Adaptasi</div>
+      <div class="skill-badge"><span>🎯</span> Teliti</div>
+      <div class="skill-badge"><span>⏳</span> Manajemen Waktu</div>
+      <div class="skill-badge"><span>💪</span> Tahan Banting</div>
     </div>
   </div>
 </section>
@@ -1153,44 +1093,43 @@
 <!-- PLAYGROUND -->
 <section id="playground">
   <div class="section-header fade-in" style="text-align:center;max-width:800px;margin:0 auto 3rem;width:100%;">
-    <div class="section-label" style="justify-content:center;">06 — Playground</div>
+    <div class="section-label" style="justify-content:center;">06 — Dolanan</div>
     <h2 class="section-title">
-      <span class="jp" style="text-align:center;display:block;">バグハンター</span>
+      <span class="jv" style="display:block;text-align:center;">Jogo Kutu — Tantangan Pemburu Kutu</span>
       Bug Hunter Challenge
     </h2>
-    <p class="section-desc" style="margin:0 auto;">
-      Take a break — catch 🐛 bugs before they crash the codebase.
-      Use arrow keys / WASD or the on-screen controls.
+    <p class="section-desc" style="margin:0 auto;font-style:italic;">
+      Ngleremake sedhela — tangkap 🐛 kutu sadurunge nabrak codebase. Ngginakaken tombol panah, WASD, utawi kontrol ing layar.
     </p>
   </div>
 
   <div class="game-wrapper fade-in fade-in-delay-1">
     <div class="game-hud">
-      <div class="hud-item"><span class="hud-label">Score</span><span class="hud-value" id="gsScore">0</span></div>
-      <div class="hud-item"><span class="hud-label">Best</span><span class="hud-value" id="gsHigh">0</span></div>
-      <div class="hud-item"><span class="hud-label">Lv</span><span class="hud-value hud-level" id="gsLevel">1</span></div>
+      <div class="hud-item"><span class="hud-label">Biji</span><span class="hud-value" id="gsScore">0</span></div>
+      <div class="hud-item"><span class="hud-label">Paling Inggil</span><span class="hud-value" id="gsHigh">0</span></div>
+      <div class="hud-item"><span class="hud-label">Cepet</span><span class="hud-value hud-level" id="gsLevel">1</span></div>
     </div>
     <div class="canvas-frame">
       <canvas id="gameCanvas" width="480" height="480"></canvas>
       <div class="game-overlay" id="gameOverlay">
         <div class="overlay-box">
           <span class="overlay-icon">🐛</span>
-          <div class="overlay-title" id="overlayTitle">バグハンター</div>
+          <div class="overlay-title" id="overlayTitle">Jogo Kutu</div>
           <p class="overlay-sub" id="overlaySub">
-            Guide the developer to catch bugs.<br>
-            Every <span class="hl">10 bugs</span> = speed up!<br>
-            Don't hit the wall or yourself.
+            Tuntun insinyur nangkap kutu.<br>
+            Saben <span class="hl">10 kutu</span> = tambah cepet!<br>
+            Aja nabrak tembok utawa awake dhewe.
           </p>
-          <button id="startBtn" class="btn btn-primary">ゲームスタート →</button>
+          <button id="startBtn" class="btn btn-primary">◈ Wiwit Dolanan →</button>
         </div>
       </div>
     </div>
     <div class="game-controls">
-      <div class="ctrl-row"><button class="ctrl-btn" id="btnUp" aria-label="Up">↑</button></div>
+      <div class="ctrl-row"><button class="ctrl-btn" id="btnUp">↑</button></div>
       <div class="ctrl-row">
-        <button class="ctrl-btn" id="btnLeft" aria-label="Left">←</button>
-        <button class="ctrl-btn" id="btnDown" aria-label="Down">↓</button>
-        <button class="ctrl-btn" id="btnRight" aria-label="Right">→</button>
+        <button class="ctrl-btn" id="btnLeft">←</button>
+        <button class="ctrl-btn" id="btnDown">↓</button>
+        <button class="ctrl-btn" id="btnRight">→</button>
       </div>
     </div>
   </div>
@@ -1199,17 +1138,17 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header fade-in" style="text-align:center;max-width:600px;margin:0 auto 4rem;">
-    <div class="section-label" style="justify-content:center;">07 — Contact</div>
+    <div class="section-label" style="justify-content:center;">07 — Serat</div>
     <h2 class="section-title">
-      <span class="jp" style="text-align:center;display:block;">お問い合わせ</span>
-      Let's Work Together
+      <span class="jv" style="display:block;text-align:center;">Sesarengan Nyambut Damel</span>
+      Ayo Bekerja Sama
     </h2>
-    <p class="section-desc" style="margin:0 auto;">Have a project in mind or want to discuss an opportunity? Drop me a message.</p>
+    <p class="section-desc" style="margin:0 auto;font-style:italic;">Gadhah proyek ing manah utawi badhe rembugan bab kesempatan? Kintunaken serat dhateng kula.</p>
   </div>
   <div class="contact-wrapper">
     <div class="contact-info fade-in">
-      <h3>Get in touch</h3>
-      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your team.</p>
+      <h3>Sesambetan</h3>
+      <p>Kula tansah mbikak diri kangge rembugan proyek anyar, gagasan kreatif, utawi kesempatan dados bagian saking tim panjenengan.</p>
       <div class="contact-links">
         <a href="mailto:yahyawijaya082@gmail.com" class="contact-link">
           <div class="contact-link-icon">✉️</div>yahyawijaya082@gmail.com
@@ -1224,38 +1163,38 @@
     </div>
     <div class="contact-form fade-in fade-in-delay-2">
       <div class="form-group">
-        <label class="form-label">Name / お名前</label>
-        <input type="text" class="form-input" placeholder="Your name" />
+        <label class="form-label">Nama Panjenengan</label>
+        <input type="text" class="form-input" placeholder="Nama panjenengan..." />
       </div>
       <div class="form-group">
-        <label class="form-label">Email / メール</label>
-        <input type="email" class="form-input" placeholder="your@email.com" />
+        <label class="form-label">Serat Elektronik</label>
+        <input type="email" class="form-input" placeholder="serat@panjenengan.com" />
       </div>
       <div class="form-group">
-        <label class="form-label">Message / メッセージ</label>
-        <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+        <label class="form-label">Wosing Serat</label>
+        <textarea class="form-textarea" placeholder="Cariyosaken bab proyek panjenengan..."></textarea>
       </div>
-      <button class="form-submit" onclick="handleSubmit()">送信する — Send Message →</button>
+      <button class="form-submit" onclick="handleSubmit()">◈ Kintun Serat →</button>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 <span>Yahya Wijaya</span>. All rights reserved.</div>
-  <div class="footer-jp">ジャカルタで作られた ♡</div>
+  <div class="footer-copy">© 2026 <span>Yahya Wijaya</span>. Sadaya hak kareksa.</div>
+  <div class="footer-jv">Kinarya kanthi tresna saking Jakarta ♡</div>
 </footer>
 
 <script>
   /* ══════════════════════════════════════
-     BUG HUNTER — SNAKE GAME (ANIME THEME)
+     JOGO KUTU — SNAKE GAME (TEMA JAWA)
   ══════════════════════════════════════ */
   (function () {
-    const COLS=20, ROWS=20, BASE_SPEED=145, MIN_SPEED=60, SPEED_STEP=8, BUGS_PER_LVL=10;
-    const canvas=document.getElementById('gameCanvas'), ctx=canvas.getContext('2d');
-    const overlay=document.getElementById('gameOverlay'), startBtn=document.getElementById('startBtn');
-    const elScore=document.getElementById('gsScore'), elHigh=document.getElementById('gsHigh');
-    const elLevel=document.getElementById('gsLevel'), elTitle=document.getElementById('overlayTitle');
+    const COLS=20,ROWS=20,BASE_SPEED=145,MIN_SPEED=60,SPEED_STEP=8,BUGS_PER_LVL=10;
+    const canvas=document.getElementById('gameCanvas'),ctx=canvas.getContext('2d');
+    const overlay=document.getElementById('gameOverlay'),startBtn=document.getElementById('startBtn');
+    const elScore=document.getElementById('gsScore'),elHigh=document.getElementById('gsHigh');
+    const elLevel=document.getElementById('gsLevel'),elTitle=document.getElementById('overlayTitle');
     const elSub=document.getElementById('overlaySub');
 
     let snake,dir,nextDir,food,particles;
@@ -1301,9 +1240,7 @@
         spawnParticles(food.x,food.y);
         placeFood();
         if(bugsTotal%BUGS_PER_LVL===0) elLevel.textContent=++level;
-      } else {
-        snake.pop();
-      }
+      } else { snake.pop(); }
       updateParticles(); draw();
     }
 
@@ -1313,40 +1250,45 @@
         x:(cx+.5)*cw, y:(cy+.5)*ch,
         vx:(Math.random()-.5)*cw*.8, vy:(Math.random()-.5)*ch*.8,
         life:1, r:Math.random()*3+1.5,
-        hue: Math.random()<0.5?'#FF6B9D':'#C77DFF'
+        col:Math.random()<0.5?'#C8922A':'#4A7C59'
       });
     }
     function updateParticles(){
       particles=particles.map(p=>({...p,x:p.x+p.vx,y:p.y+p.vy,life:p.life-.07})).filter(p=>p.life>0);
     }
 
-    function draw(){
-      const cw=CW(),ch=CH(),W=canvas.width,H=canvas.height;
-      ctx.fillStyle='#060412';
-      ctx.fillRect(0,0,W,H);
-
-      /* manga grid */
-      ctx.strokeStyle='rgba(255,107,157,0.04)'; ctx.lineWidth=1;
+    /* Batik kawung grid draw */
+    function drawGrid(W,H,cw,ch){
+      ctx.strokeStyle='rgba(200,146,42,0.04)'; ctx.lineWidth=1;
       for(let c=0;c<=COLS;c++){ctx.beginPath();ctx.moveTo(c*cw,0);ctx.lineTo(c*cw,H);ctx.stroke();}
       for(let r=0;r<=ROWS;r++){ctx.beginPath();ctx.moveTo(0,r*ch);ctx.lineTo(W,r*ch);ctx.stroke();}
+      /* Diagonal parang lines */
+      ctx.strokeStyle='rgba(200,146,42,0.018)';
+      for(let i=-H;i<W+H;i+=28){
+        ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i+H,H);ctx.stroke();
+      }
+    }
 
+    function draw(){
+      const cw=CW(),ch=CH(),W=canvas.width,H=canvas.height;
+      ctx.fillStyle='#0E0A02';
+      ctx.fillRect(0,0,W,H);
+      drawGrid(W,H,cw,ch);
       drawFood(cw,ch);
-
       particles.forEach(p=>{
         ctx.globalAlpha=p.life;
-        ctx.fillStyle=p.hue;
+        ctx.fillStyle=p.col;
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
       });
       ctx.globalAlpha=1;
-
       drawSnake(cw,ch);
     }
 
     function drawFood(cw,ch){
       const fx=(food.x+.5)*cw, fy=(food.y+.5)*ch, r=Math.min(cw,ch)*.38;
-      /* sakura glow */
+      /* emas glow */
       const g=ctx.createRadialGradient(fx,fy,0,fx,fy,r*2.5);
-      g.addColorStop(0,'rgba(255,107,157,0.4)'); g.addColorStop(1,'rgba(255,107,157,0)');
+      g.addColorStop(0,'rgba(200,146,42,0.4)'); g.addColorStop(1,'rgba(200,146,42,0)');
       ctx.fillStyle=g;
       ctx.beginPath(); ctx.arc(fx,fy,r*2.5,0,Math.PI*2); ctx.fill();
       ctx.font=`${Math.floor(r*1.7)}px serif`;
@@ -1358,27 +1300,46 @@
       const pad=Math.max(1,Math.min(cw,ch)*.1);
       snake.forEach((seg,i)=>{
         ctx.shadowBlur=i===0?16:0;
-        ctx.shadowColor='#FF6B9D';
+        ctx.shadowColor='#C8922A';
         const t=i/Math.max(snake.length-1,1);
-        const rgb=lerpRGB([255,107,157],[100,60,200],t);
+        /* sogan gradient: emas → coklat tua */
+        const rgb=lerpRGB([200,146,42],[90,40,10],t);
         ctx.fillStyle=`rgb(${rgb})`;
-        rRect(ctx,seg.x*cw+pad,seg.y*ch+pad,cw-pad*2,ch-pad*2,4);
-        ctx.fill();
+        /* Wayang-style diamond segments */
+        if(i===0){
+          /* head: octagon */
+          const x=seg.x*cw+pad, y=seg.y*ch+pad, w=cw-pad*2, h=ch-pad*2;
+          rRect(ctx,x,y,w,h,3); ctx.fill();
+        } else {
+          /* body: rotated diamond */
+          const cx2=(seg.x+.5)*cw, cy2=(seg.y+.5)*ch;
+          const hw=(cw-pad*2)*0.52, hh=(ch-pad*2)*0.52;
+          ctx.beginPath();
+          ctx.moveTo(cx2,cy2-hh); ctx.lineTo(cx2+hw,cy2);
+          ctx.lineTo(cx2,cy2+hh); ctx.lineTo(cx2-hw,cy2);
+          ctx.closePath(); ctx.fill();
+        }
       });
       ctx.shadowBlur=0;
       drawEyes(cw,ch);
     }
+
     function drawEyes(cw,ch){
-      const h=snake[0],r=Math.min(cw,ch)*.1;
-      const cx=(h.x+.5)*cw,cy=(h.y+.5)*ch;
+      const h=snake[0],r=Math.min(cw,ch)*.09;
+      const cx=(h.x+.5)*cw, cy=(h.y+.5)*ch;
       const perp={x:-dir.y,y:dir.x};
       [1,-1].forEach(s=>{
-        const ex=cx+dir.x*cw*.18+perp.x*cw*.18*s;
-        const ey=cy+dir.y*ch*.18+perp.y*ch*.18*s;
-        ctx.fillStyle='#F5EAF8'; ctx.beginPath(); ctx.arc(ex,ey,r,0,Math.PI*2); ctx.fill();
-        ctx.fillStyle='#1A0A2E'; ctx.beginPath(); ctx.arc(ex+dir.x*r*.35,ey+dir.y*r*.35,r*.5,0,Math.PI*2); ctx.fill();
-        /* cute shine */
-        ctx.fillStyle='rgba(255,255,255,0.8)'; ctx.beginPath(); ctx.arc(ex-r*.2,ey-r*.2,r*.2,0,Math.PI*2); ctx.fill();
+        const ex=cx+dir.x*cw*.18+perp.x*cw*.16*s;
+        const ey=cy+dir.y*ch*.18+perp.y*ch*.16*s;
+        /* Mata wayang — emas outline */
+        ctx.strokeStyle='rgba(200,146,42,0.7)'; ctx.lineWidth=1;
+        ctx.fillStyle='#F5E6C0';
+        ctx.beginPath(); ctx.arc(ex,ey,r,0,Math.PI*2); ctx.fill(); ctx.stroke();
+        ctx.fillStyle='#0E0A02';
+        ctx.beginPath(); ctx.arc(ex+dir.x*r*.35,ey+dir.y*r*.35,r*.5,0,Math.PI*2); ctx.fill();
+        /* highlight */
+        ctx.fillStyle='rgba(255,255,255,0.7)';
+        ctx.beginPath(); ctx.arc(ex-r*.2,ey-r*.2,r*.2,0,Math.PI*2); ctx.fill();
       });
     }
 
@@ -1401,9 +1362,9 @@
     function endGame(){
       running=false; cancelAnimationFrame(rafId);
       if(score>highScore){highScore=score;localStorage.setItem('bhHigh',highScore);elHigh.textContent=highScore;}
-      elTitle.textContent='💥 バグ大爆発！';
-      elSub.innerHTML=`Squashed <span class="hl">${bugsTotal} bugs</span><br>Score: <span class="hl">${score}</span> · Level ${level}`;
-      startBtn.textContent='リスタート →';
+      elTitle.textContent='💥 Sistem Ambruk!';
+      elSub.innerHTML=`Panjenengan nangkap <span class="hl">${bugsTotal} kutu</span><br>Biji: <span class="hl">${score}</span> · Tahap ${level}`;
+      startBtn.textContent='◈ Wiwit Malih →';
       overlay.classList.remove('hidden');
     }
 
@@ -1430,20 +1391,20 @@
     /* idle draw */
     (function(){
       const cw=CW(),ch=CH();
-      ctx.fillStyle='#060412'; ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.strokeStyle='rgba(255,107,157,0.04)'; ctx.lineWidth=1;
-      for(let c=0;c<=COLS;c++){ctx.beginPath();ctx.moveTo(c*cw,0);ctx.lineTo(c*cw,canvas.height);ctx.stroke();}
-      for(let r=0;r<=ROWS;r++){ctx.beginPath();ctx.moveTo(0,r*ch);ctx.lineTo(canvas.width,r*ch);ctx.stroke();}
+      ctx.fillStyle='#0E0A02'; ctx.fillRect(0,0,canvas.width,canvas.height);
+      drawGrid(canvas.width,canvas.height,cw,ch);
       [{x:10,y:10},{x:9,y:10},{x:8,y:10}].forEach((s,i)=>{
-        ctx.fillStyle=i===0?'#FF6B9D':'#8B3F9A';
-        rRect(ctx,s.x*cw+2,s.y*ch+2,cw-4,ch-4,4); ctx.fill();
+        ctx.fillStyle=i===0?'#C8922A':'#6B4010';
+        rRect(ctx,s.x*cw+2,s.y*ch+2,cw-4,ch-4,3); ctx.fill();
       });
       ctx.font=`${Math.floor(ch*.7)}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
       ctx.fillText('🐛',15.5*cw,10.5*ch);
     })();
   })();
 
-  /* ══════════ THEME / NAV / SCROLL / FORM ══════════ */
+  /* ══════════════════════════════════════
+     TEMA / NAV / SCROLL / FORM
+  ══════════════════════════════════════ */
   const html=document.documentElement, toggle=document.getElementById('themeToggle');
   html.setAttribute('data-theme',localStorage.getItem('theme')||'dark');
   toggle.addEventListener('click',()=>{
@@ -1455,25 +1416,25 @@
   hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
   function closeMobileMenu(){mobileMenu.classList.remove('open');}
 
-  /* Scroll animations */
+  /* Scroll fade */
   const observer=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
   },{threshold:0.1});
   document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
   document.querySelectorAll('#hero .fade-in').forEach(el=>setTimeout(()=>el.classList.add('visible'),100));
 
-  /* Animate stat bars when visible */
+  /* Animate watak bars */
   const barObs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
-        e.target.querySelectorAll('.stat-bar-fill').forEach(bar=>{
-          setTimeout(()=>bar.classList.add('animate'),200);
+        e.target.querySelectorAll('.watak-fill').forEach((bar,i)=>{
+          setTimeout(()=>bar.classList.add('animate'),200+i*80);
         });
         barObs.unobserve(e.target);
       }
     });
   },{threshold:0.3});
-  document.querySelectorAll('.stat-bars').forEach(el=>barObs.observe(el));
+  document.querySelectorAll('.watak-bars').forEach(el=>barObs.observe(el));
 
   /* Active nav */
   const sections=document.querySelectorAll('section[id]');
@@ -1491,8 +1452,9 @@
 
   function handleSubmit(){
     const btn=document.querySelector('.form-submit');
-    btn.textContent='✿ 送信しました！'; btn.style.background='linear-gradient(135deg,#FF6B9D,#C77DFF)';
-    setTimeout(()=>{btn.textContent='送信する — Send Message →'; btn.style.background='';},3000);
+    btn.textContent='◈ Serat Sampun Kekintun!';
+    btn.style.background='linear-gradient(135deg,#4A7C59,#2D5C3A)';
+    setTimeout(()=>{btn.textContent='◈ Kintun Serat →'; btn.style.background='';},3000);
   }
 </script>
 </body>
