@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index-jawa.html"
+    },
+    {
+      "source": "/anime",
+      "destination": "/index-anime.html"
+    },
+    {
+      "source": "/original",
+      "destination": "/index.html"
+    }
+  ],
+  "cleanUrls": true
+}
