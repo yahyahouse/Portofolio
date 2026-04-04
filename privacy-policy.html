@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for the Smell Radar application — developed by Yahya Wijaya." />
+  <meta name="author" content="Yahya Wijaya" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yahyawijaya.com/privacy-policy" />
+  <meta property="og:title" content="Privacy Policy — Smell Radar" />
+  <meta property="og:description" content="Privacy Policy for the Smell Radar application by Yahya Wijaya." />
+  <title>Privacy Policy — Smell Radar | Yahya Wijaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ══════════════════════════════════════════════════════
+       TEMA JAWA — KERATON STYLE
+       Sogan brown + Gold + Moss green + Parchment cream
+       Inspired by: batik kawung, parang, wayang kulit
+    ══════════════════════════════════════════════════════ */
+    :root {
+      --accent:   #C8922A;
+      --accent2:  #8B4513;
+      --accent3:  #4A7C59;
+      --bg:       #1A1208;
+      --bg2:      #201608;
+      --bg3:      #2A1E0A;
+      --card:     #241A08;
+      --card2:    #2E2210;
+      --border:   rgba(200,146,42,0.2);
+      --border2:  rgba(200,146,42,0.1);
+      --text:     #E8D5A3;
+      --muted:    #8A7048;
+      --heading:  #F5E6C0;
+      --glow:     rgba(200,146,42,0.25);
+    }
+    [data-theme="light"] {
+      --accent:   #8B6914;
+      --accent2:  #5C2E0A;
+      --accent3:  #2D5C3A;
+      --bg:       #F5EDD5;
+      --bg2:      #EDE3C5;
+      --bg3:      #E5D8B5;
+      --card:     #FAF3DC;
+      --card2:    #F0E8C8;
+      --border:   rgba(139,105,20,0.25);
+      --border2:  rgba(139,105,20,0.12);
+      --text:     #2C1A06;
+      --muted:    #7A5C28;
+      --heading:  #180E02;
+      --glow:     rgba(139,105,20,0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'IM Fell English', serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius: 0;
+    }
+
+    /* ══ BATIK KAWUNG BACKGROUND PATTERN ══ */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0;
+      opacity: 0.045;
+      background-image:
+        radial-gradient(ellipse 10px 14px at 24px 24px, var(--accent) 60%, transparent 65%),
+        radial-gradient(ellipse 10px 14px at 24px 0px,  var(--accent) 60%, transparent 65%),
+        radial-gradient(ellipse 14px 10px at 0px 24px,  var(--accent) 60%, transparent 65%),
+        radial-gradient(ellipse 14px 10px at 48px 24px, var(--accent) 60%, transparent 65%);
+      background-size: 48px 48px;
+    }
+
+    /* ══ NOISE TEXTURE ══ */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: 0.5;
+    }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 5%;
+      background: rgba(26,18,8,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s;
+    }
+    [data-theme="light"] nav { background: rgba(245,237,213,0.92); }
+    nav::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent3), var(--accent), transparent);
+      opacity: 0.7;
+    }
+    .nav-logo {
+      text-decoration: none;
+      display: flex; flex-direction: column; line-height: 1;
+    }
+    .nav-logo-jv {
+      font-family: 'Cinzel', serif;
+      font-weight: 900; font-size: 1.15rem;
+      color: var(--accent); letter-spacing: 2px;
+    }
+    .nav-logo-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; color: var(--muted);
+      letter-spacing: 3px; text-transform: uppercase;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .back-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.3s;
+    }
+    .back-btn:hover { color: var(--accent); }
+    .theme-toggle {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 0; cursor: pointer;
+      width: 52px; height: 28px; position: relative; transition: all 0.3s;
+    }
+    .theme-toggle::before {
+      content: '🌙'; position: absolute;
+      top: 50%; left: 5px; transform: translateY(-50%);
+      font-size: 13px; transition: all 0.3s;
+    }
+    [data-theme="light"] .theme-toggle::before { content: '☀️'; left: 28px; }
+
+    /* ══ HERO ══ */
+    .page-hero {
+      padding: 140px 5% 60px;
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto;
+    }
+    .app-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(200,146,42,0.08);
+      border: 1px solid rgba(200,146,42,0.35);
+      border-radius: 0; padding: 0.4rem 1rem;
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      color: var(--accent); letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .app-badge::before { content: '◈'; font-size: 0.6rem; animation: kedip 2.5s ease-in-out infinite; display: inline-block; }
+    @keyframes kedip { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.85)} }
+
+    /* Aksara deco line */
+    .aksara-deco {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem; color: var(--accent);
+      letter-spacing: 4px; text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem; opacity: 0.75;
+    }
+    .aksara-deco::before, .aksara-deco::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent));
+    }
+    .aksara-deco::after { background: linear-gradient(90deg, var(--accent), transparent); }
+
+    .page-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800; color: var(--heading);
+      letter-spacing: 1px; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .page-title .accent-text {
+      background: linear-gradient(135deg, var(--accent) 20%, #E8B84B 50%, var(--accent3) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-meta {
+      font-family: 'Space Mono', monospace; font-size: 0.8rem;
+      color: var(--muted); letter-spacing: 1px;
+    }
+
+    /* ══ CONTENT ══ */
+    .content {
+      max-width: 860px; margin: 0 auto;
+      padding: 0 5% 100px;
+      position: relative; z-index: 1;
+    }
+    .section-label {
+      font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      color: var(--accent); letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 0.75rem; margin-top: 3rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .section-label::before { content: '◈'; font-size: 0.55rem; }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative; overflow: hidden;
+      margin-bottom: 1rem; transition: border-color 0.3s;
+    }
+    .card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+    }
+    .card::after {
+      content: '◈';
+      position: absolute; bottom: 0.8rem; right: 0.8rem;
+      font-size: 1rem; color: var(--accent); opacity: 0.12;
+    }
+    .card:hover { border-color: rgba(200,146,42,0.45); }
+    .card:hover::before { transform: scaleX(1); }
+    .card-header {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .card-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, rgba(200,146,42,0.1), rgba(74,124,89,0.08));
+      border: 1px solid rgba(200,146,42,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem; font-weight: 700; color: var(--heading); letter-spacing: 0.5px;
+    }
+    .card p {
+      font-style: italic; color: var(--muted); font-size: 0.92rem; line-height: 1.85;
+    }
+    .card ul {
+      color: var(--muted); font-size: 0.92rem; line-height: 1.85;
+      padding-left: 0; list-style: none;
+    }
+    .card ul li {
+      padding-left: 1.4rem; position: relative; margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .card ul li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.75rem; top: 3px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0;
+      position: relative;
+    }
+    .divider::after {
+      content: '◈ ── ◈';
+      position: absolute; top: -0.55rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.5rem; color: var(--accent);
+      background: var(--bg); padding: 0 0.5rem;
+      letter-spacing: 3px; opacity: 0.6;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, rgba(200,146,42,0.06), rgba(74,124,89,0.04));
+      border: 1px solid rgba(200,146,42,0.25);
+      padding: 2rem;
+      display: flex; align-items: center; gap: 2rem;
+      flex-wrap: wrap; position: relative;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3));
+    }
+    .contact-card-icon {
+      font-size: 2.5rem; flex-shrink: 0;
+    }
+    .contact-card-body h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--heading); margin-bottom: 0.4rem; letter-spacing: 0.5px;
+    }
+    .contact-card-body p {
+      font-style: italic; color: var(--muted); font-size: 0.9rem; line-height: 1.7;
+    }
+
+    footer {
+      text-align: center; padding: 2rem 5%;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+      position: relative; z-index: 1;
+    }
+    footer::before {
+      content: '◈ ── ── ◈ ── ── ◈';
+      position: absolute; top: -0.5rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.5rem; color: var(--accent);
+      background: var(--bg); padding: 0 0.5rem;
+      letter-spacing: 4px; opacity: 0.5; white-space: nowrap;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-jv">Yahya Wijaya</span>
+      <span class="nav-logo-sub">Software Engineer</span>
+    </a>
+    <div class="nav-right">
+      <a href="/" class="back-btn">← Portfolio</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="app-badge">📡 Smell Radar</div>
+    <div class="aksara-deco">A Covenant of Trust & Transparency</div>
+    <h1 class="page-title">
+      Privacy <span class="accent-text">Policy</span>
+    </h1>
+    <p class="page-meta">// Last updated: April 2026 &nbsp;·&nbsp; Version 1.0</p>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <p style="font-style:italic;color:var(--muted); font-size:0.95rem; line-height:1.9; margin-bottom:2rem;">
+      Smell Radar is a community-based odour reporting application developed by
+      <a href="/">Yahya Wijaya</a>. This policy sets forth what data is collected,
+      how it is used, and the rights held by all who use this application.
+    </p>
+
+    <!-- Data Collected -->
+    <p class="section-label">Data Collected</p>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📍</div>
+        <span class="card-title">GPS Location</span>
+      </div>
+      <p>
+        The application accesses device location to determine the coordinates of odour reports
+        and to display nearby reports on the map. Location is <strong>accessed only whilst
+        the application is actively in use</strong> and is never recorded in the background.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📷</div>
+        <span class="card-title">Photos</span>
+      </div>
+      <p>
+        Photos attached to reports are uploaded to Firebase Storage and
+        <strong>displayed publicly</strong> alongside the report. Adding a photo is
+        entirely optional — reports may be submitted without one.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🆔</div>
+        <span class="card-title">Anonymous Identity</span>
+      </div>
+      <p>
+        The application uses <strong>Firebase Anonymous Authentication</strong> to assign
+        each user a unique identity without requiring registration or login. No name, email,
+        phone number, or other personal data is collected.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📝</div>
+        <span class="card-title">Report Content</span>
+      </div>
+      <p>
+        Reports created by users (odour category, description, coordinates, and rating)
+        are stored in <strong>Firebase Cloud Firestore</strong> and are visible to all
+        users of the application.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- How Data is Used -->
+    <p class="section-label">How Data is Used</p>
+
+    <div class="card">
+      <ul>
+        <li>To display odour reports on the map for all users</li>
+        <li>To validate report ownership — only the creator may delete their own report</li>
+        <li>To prevent duplicate reports from the same user within the same area (50 m radius)</li>
+        <li>To prevent multiple ratings of the same report by a single user</li>
+      </ul>
+      <p style="margin-top:1rem;">
+        We <strong>do not sell, rent, or share</strong> user data with any third party
+        for commercial purposes.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Third-Party Services -->
+    <p class="section-label">Third-Party Services</p>
+
+    <div class="card">
+      <ul>
+        <li>
+          <a href="https://firebase.google.com/support/privacy" target="_blank">
+            Firebase Cloud Firestore
+          </a> — report data storage
+        </li>
+        <li>
+          <a href="https://firebase.google.com/support/privacy" target="_blank">
+            Firebase Storage
+          </a> — report photo storage
+        </li>
+        <li>
+          <a href="https://firebase.google.com/support/privacy" target="_blank">
+            Firebase Anonymous Auth
+          </a> — anonymous user identity
+        </li>
+        <li>
+          <a href="https://www.openstreetmap.org/copyright" target="_blank">
+            OpenStreetMap
+          </a> — map data (no user data is transmitted)
+        </li>
+      </ul>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Security & Retention -->
+    <p class="section-label">Security & Data Retention</p>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔒</div>
+        <span class="card-title">Security</span>
+      </div>
+      <p>
+        Report data is safeguarded by <strong>Firestore Security Rules</strong>.
+        Only the report's owner (verified through Firebase Auth UID) may delete
+        their own report. All other operations are validated server-side.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🗓️</div>
+        <span class="card-title">Retention</span>
+      </div>
+      <p>
+        Reports are retained until the user manually deletes them within the application.
+        The Firebase anonymous identity is reset upon uninstalling and reinstalling
+        the application (the user is thereafter treated as new).
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- User Rights -->
+    <p class="section-label">Your Rights</p>
+
+    <div class="card">
+      <ul>
+        <li><strong>Delete reports</strong> — users may remove their own reports at any time</li>
+        <li><strong>Decline photo sharing</strong> — photos are entirely optional</li>
+        <li><strong>Deny location permission</strong> — you may decline, though map features will be unavailable</li>
+      </ul>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Policy Changes -->
+    <p class="section-label">Changes to This Policy</p>
+
+    <div class="card">
+      <p>
+        Should this policy be amended, the date shown at the top of this page shall be updated accordingly.
+        Continued use of the application following any changes constitutes acceptance of the revised policy.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-body">
+        <h3>Have Questions?</h3>
+        <p>
+          Reach the developer directly at
+          <a href="mailto:yahyawijaya082@gmail.com">yahyawijaya082@gmail.com</a>
+          or visit <a href="/">yahyawijaya.com</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 <a href="/">Yahya Wijaya</a> &nbsp;·&nbsp; Smell Radar Privacy Policy</p>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    html.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+    function toggleTheme() {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  </script>
+
+</body>
+</html>
