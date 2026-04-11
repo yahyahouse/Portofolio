@@ -229,18 +229,40 @@
 
     .nav-logo {
       text-decoration: none;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .nav-logo-mark {
+      font-family: 'Cinzel', serif;
+      font-weight: 900; font-size: 1.05rem;
+      color: var(--accent); letter-spacing: 2px;
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; flex-shrink: 0;
+      transition: border-color 0.3s;
+    }
+    .nav-logo-mark::before, .nav-logo-mark::after {
+      content: '';
+      position: absolute;
+      width: 5px; height: 5px;
+      border-color: var(--accent); border-style: solid; opacity: 0.6;
+    }
+    .nav-logo-mark::before { top: -2px; left: -2px; border-width: 1px 0 0 1px; }
+    .nav-logo-mark::after  { bottom: -2px; right: -2px; border-width: 0 1px 1px 0; }
+    .nav-logo:hover .nav-logo-mark { border-color: var(--accent); }
+    .nav-logo-text {
       display: flex; flex-direction: column; line-height: 1;
     }
     .nav-logo-jv {
       font-family: 'Cinzel', serif;
-      font-weight: 900; font-size: 1.15rem;
-      color: var(--accent);
-      letter-spacing: 2px;
+      font-weight: 700; font-size: 0.85rem;
+      color: var(--heading); letter-spacing: 1.5px;
     }
     .nav-logo-sub {
       font-family: 'Space Mono', monospace;
-      font-size: 0.55rem; color: var(--muted);
-      letter-spacing: 3px; text-transform: uppercase;
+      font-size: 0.5rem; color: var(--muted);
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-top: 0.2rem;
     }
 
     .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -880,8 +902,11 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <span class="nav-logo-jv">YW</span>
-    <span class="nav-logo-sub">Software Engineer</span>
+    <span class="nav-logo-mark">YW</span>
+    <span class="nav-logo-text">
+      <span class="nav-logo-jv">Yahya Wijaya</span>
+      <span class="nav-logo-sub">Software Engineer</span>
+    </span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
