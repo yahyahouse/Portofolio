@@ -98,6 +98,7 @@
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=IM+Fell+English:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     /* ══════════════════════════════════════════════════════
        TEMA JAWA — KERATON STYLE
@@ -867,7 +868,22 @@
       cursor:pointer; transition:all 0.3s;
       box-shadow:0 0 20px rgba(200,146,42,0.25);
     }
-    .form-submit:hover { transform:translateY(-2px); box-shadow:0 0 35px rgba(200,146,42,0.45); }
+    .form-submit:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 0 35px rgba(200,146,42,0.45); }
+    .form-submit:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+    .form-error { font-family:'Space Mono',monospace; font-size:0.62rem; color:#C0392B; margin-top:0.4rem; display:none; }
+    .form-group.has-error .form-input,
+    .form-group.has-error .form-textarea { border-color:#C0392B; box-shadow:0 0 0 3px rgba(192,57,43,0.08); }
+    .form-group.has-error .form-error { display:block; }
+    .form-toast {
+      position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(120%);
+      background:var(--card); border:1px solid var(--border);
+      padding:1rem 2rem; font-family:'Space Mono',monospace; font-size:0.72rem;
+      letter-spacing:1px; z-index:9999; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+      pointer-events:none;
+    }
+    .form-toast.show { transform:translateX(-50%) translateY(0); }
+    .form-toast.success { border-color:var(--accent3); color:var(--accent3); }
+    .form-toast.error   { border-color:#C0392B; color:#C0392B; }
 
     /* ══ FOOTER ══ */
     footer {
@@ -1412,22 +1428,28 @@
       </div>
     </div>
     <div class="contact-form fade-in fade-in-delay-2">
-      <div class="form-group">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-input" placeholder="Your honoured name..." />
+      <div class="form-group" id="groupName">
+        <label class="form-label" for="contactName">Your Name</label>
+        <input type="text" id="contactName" class="form-input" placeholder="Your honoured name..." autocomplete="name" />
+        <span class="form-error">Please enter your name.</span>
       </div>
-      <div class="form-group">
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" placeholder="your@email.com" />
+      <div class="form-group" id="groupEmail">
+        <label class="form-label" for="contactEmail">Email Address</label>
+        <input type="email" id="contactEmail" class="form-input" placeholder="your@email.com" autocomplete="email" />
+        <span class="form-error">Please enter a valid email address.</span>
       </div>
-      <div class="form-group">
-        <label class="form-label">Your Message</label>
-        <textarea class="form-textarea" placeholder="Tell me of your project..."></textarea>
+      <div class="form-group" id="groupMessage">
+        <label class="form-label" for="contactMessage">Your Message</label>
+        <textarea id="contactMessage" class="form-textarea" placeholder="Tell me of your project..."></textarea>
+        <span class="form-error">Message must be at least 10 characters.</span>
       </div>
-      <button class="form-submit" onclick="handleSubmit()">◈ Send Message →</button>
+      <button class="form-submit" id="contactSubmit">◈ Send Message →</button>
     </div>
   </div>
 </section>
+
+<!-- TOAST NOTIFICATION -->
+<div class="form-toast" id="formToast"></div>
 
 <!-- FOOTER -->
 <footer>
@@ -1775,12 +1797,62 @@
   },{threshold:0.4});
   sections.forEach(s=>navObs.observe(s));
 
-  function handleSubmit(){
-    const btn=document.querySelector('.form-submit');
-    btn.textContent='◈ Message Sent!';
-    btn.style.background='linear-gradient(135deg,#4A7C59,#2D5C3A)';
-    setTimeout(()=>{btn.textContent='◈ Send Message →'; btn.style.background='';},3000);
+  /* ══ EMAILJS CONFIG — fill in after registering at emailjs.com ══ */
+  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account > API Keys
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  /* ══ CONTACT FORM ══ */
+  const toast = document.getElementById('formToast');
+
+  function showToast(msg, type) {
+    toast.textContent = msg;
+    toast.className = `form-toast ${type} show`;
+    setTimeout(() => { toast.classList.remove('show'); }, 4000);
   }
+
+  function validateField(groupId, condition) {
+    const group = document.getElementById(groupId);
+    if (condition) { group.classList.remove('has-error'); return true; }
+    group.classList.add('has-error'); return false;
+  }
+
+  document.getElementById('contactSubmit').addEventListener('click', async () => {
+    const name    = document.getElementById('contactName').value.trim();
+    const email   = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const v1 = validateField('groupName',    name.length > 0);
+    const v2 = validateField('groupEmail',   emailRe.test(email));
+    const v3 = validateField('groupMessage', message.length >= 10);
+    if (!v1 || !v2 || !v3) return;
+
+    const btn = document.getElementById('contactSubmit');
+    btn.textContent = '◈ Sending...';
+    btn.disabled = true;
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:    name,
+        from_email:   email,
+        message:      message,
+        to_name:      'Yahya',
+      });
+      btn.textContent = '◈ Message Sent!';
+      btn.style.background = 'linear-gradient(135deg,#4A7C59,#2D5C3A)';
+      showToast('◈ Message delivered. I will reach out soon.', 'success');
+      document.getElementById('contactName').value    = '';
+      document.getElementById('contactEmail').value   = '';
+      document.getElementById('contactMessage').value = '';
+      setTimeout(() => { btn.textContent = '◈ Send Message →'; btn.style.background = ''; btn.disabled = false; }, 3000);
+    } catch (err) {
+      btn.textContent = '◈ Send Message →';
+      btn.disabled = false;
+      showToast('◈ Failed to send. Please try again or email directly.', 'error');
+    }
+  });
 </script>
 </body>
 </html>

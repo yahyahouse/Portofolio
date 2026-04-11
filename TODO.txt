@@ -1,0 +1,43 @@
+PORTFOLIO ENHANCEMENT TODO
+==========================
+
+[x] 1. [KRITIS] Contact form fungsional
+        - Integrasikan EmailJS (CDN @emailjs/browser v4)
+        - Validasi: nama tidak kosong, email format valid, pesan min 10 karakter
+        - Error message per field (inline)
+        - Toast notification sukses/gagal
+        - Loading + disabled state saat mengirim
+        - Reset form setelah sukses
+        - Status: SELESAI — PERLU ISI CREDENTIAL (lihat catatan di bawah)
+
+        !! SEBELUM DEPLOY — isi 3 nilai ini di index.html (cari "EMAILJS CONFIG"):
+           1. Daftar di https://emailjs.com (gratis hingga 200 email/bulan)
+           2. Buat Email Service (connect Gmail/Outlook)
+           3. Buat Email Template — variable yang dipakai:
+              {{from_name}}, {{from_email}}, {{message}}, {{to_name}}
+           4. Isi EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID
+
+[ ] 2. [PENTING] Fix stats hero
+        - "5+ Projects" → "6+ Projects" (sesuai jumlah kartu di section Projects)
+        - Status: BELUM DIKERJAKAN
+
+[ ] 3. [PENTING] Soft Skills section — ganti badge generik
+        - Hapus badge kosong seperti "Teamwork", "Resilience", dll.
+        - Ganti dengan achievement / anekdot konkret per skill
+        - Contoh: "Led cross-team BNI integration under 2-week deadline"
+        - Status: BELUM DIKERJAKAN
+
+[ ] 4. [PENTING] Tambah section Certifications / Education
+        - Tampilkan sertifikasi resmi jika ada (TIBCO, AWS, Oracle, dsb.)
+        - Tambah riwayat pendidikan (universitas, jurusan, tahun)
+        - Status: BELUM DIKERJAKAN
+
+[ ] 5. [NICE-TO-HAVE] Footer — tambah social links
+        - Tambah ikon/link GitHub dan LinkedIn di footer
+        - Supaya visitor tidak perlu scroll balik ke atas
+        - Status: BELUM DIKERJAKAN
+
+[ ] 6. [NICE-TO-HAVE] Verifikasi CV download
+        - Pastikan file PDF bisa didownload dan isinya up to date
+        - Cek link tidak broken
+        - Status: PERLU DICEK
