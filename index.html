@@ -370,15 +370,21 @@
       );
     }
 
-    /* Wayang silhouette deco */
+    /* Kawung ornament deco */
     .wayang-deco {
       position: absolute;
-      font-size: clamp(10rem, 20vw, 22rem);
-      opacity: 0.028;
       pointer-events: none;
       user-select: none;
-      line-height: 1;
-      filter: sepia(1);
+    }
+    .kawung {
+      width: clamp(18rem, 28vw, 32rem);
+      height: clamp(18rem, 28vw, 32rem);
+      opacity: 0.055;
+    }
+    .kawung circle {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.2;
     }
 
     .hero-content {
@@ -1007,8 +1013,31 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-parang"></div>
-  <span class="wayang-deco" style="right:-3%;top:5%;transform:rotate(3deg)">𓂀</span>
-  <span class="wayang-deco" style="left:-2%;bottom:3%;font-size:14rem;opacity:0.02">☽</span>
+  <!-- Kawung motif — kanan atas -->
+  <div class="wayang-deco" style="right:-6%;top:2%;transform:rotate(12deg)" aria-hidden="true">
+    <svg class="kawung" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- 4 petal circles touching center -->
+      <circle cx="100" cy="55"  r="45"/>
+      <circle cx="145" cy="100" r="45"/>
+      <circle cx="100" cy="145" r="45"/>
+      <circle cx="55"  cy="100" r="45"/>
+      <!-- center ring -->
+      <circle cx="100" cy="100" r="18"/>
+      <!-- outer frame -->
+      <circle cx="100" cy="100" r="97"/>
+    </svg>
+  </div>
+  <!-- Kawung motif kecil — kiri bawah -->
+  <div class="wayang-deco" style="left:-4%;bottom:2%;opacity:0.035;transform:rotate(-8deg)" aria-hidden="true">
+    <svg class="kawung" style="width:clamp(12rem,18vw,22rem);height:clamp(12rem,18vw,22rem)" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="55"  r="45"/>
+      <circle cx="145" cy="100" r="45"/>
+      <circle cx="100" cy="145" r="45"/>
+      <circle cx="55"  cy="100" r="45"/>
+      <circle cx="100" cy="100" r="18"/>
+      <circle cx="100" cy="100" r="97"/>
+    </svg>
+  </div>
 
   <div class="hero-content">
     <div class="hero-text">
