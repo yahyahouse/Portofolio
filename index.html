@@ -720,6 +720,44 @@
     }
     .skill-badge:hover::before { opacity:1; }
 
+    /* ══ CHARACTER CARDS ══ */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .character-card {
+      background: var(--card); border: 1px solid var(--border2);
+      padding: 1.5rem 1.75rem;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .character-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .character-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(200,146,42,0.1);
+      transform: translateY(-2px);
+    }
+    .character-card:hover::before { opacity: 1; }
+    .character-card-title {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      font-weight: 700; color: var(--accent);
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .character-card-title span { font-size: 1rem; }
+    .character-card-desc {
+      font-size: 0.82rem; color: var(--muted);
+      line-height: 1.75; font-style: italic;
+    }
+    .character-card-desc strong { color: var(--text); font-style: normal; }
+
     /* ══ PROJECTS ══ */
     #projects { background: var(--bg2); }
 
@@ -1343,15 +1381,31 @@
         Soft Skills
       </h2>
     </div>
-    <div class="skills-grid fade-in">
-      <div class="skill-badge"><span>💡</span> Problem Solving</div>
-      <div class="skill-badge"><span>🧠</span> Critical Thinking</div>
-      <div class="skill-badge"><span>🗣️</span> Communication</div>
-      <div class="skill-badge"><span>👥</span> Teamwork</div>
-      <div class="skill-badge"><span>📈</span> Adaptability</div>
-      <div class="skill-badge"><span>🎯</span> Attention to Detail</div>
-      <div class="skill-badge"><span>⏳</span> Time Management</div>
-      <div class="skill-badge"><span>💪</span> Resilience</div>
+    <div class="character-grid fade-in">
+      <div class="character-card">
+        <div class="character-card-title"><span>💡</span> Problem Solving</div>
+        <div class="character-card-desc">Diagnosed and resolved a critical <strong>TIBCO integration bottleneck</strong> impacting Telkomsel's notification pipeline, restoring stable message flow under production pressure.</div>
+      </div>
+      <div class="character-card">
+        <div class="character-card-title"><span>🧠</span> Critical Thinking</div>
+        <div class="character-card-desc">Identified slow <strong>Oracle query patterns</strong> in BNI's Siebel procurement system and proposed targeted optimisations, reducing response time without structural changes.</div>
+      </div>
+      <div class="character-card">
+        <div class="character-card-title"><span>🗣️</span> Communication</div>
+        <div class="character-card-desc">Coordinated across backend, database, and client stakeholder teams during <strong>multi-client delivery</strong> at PT PHINCON, ensuring alignment on scope and timelines.</div>
+      </div>
+      <div class="character-card">
+        <div class="character-card-title"><span>📈</span> Adaptability</div>
+        <div class="character-card-desc">Switched fluently between <strong>Java, Golang, TypeScript, and TIBCO</strong> across different client projects — sometimes within the same sprint — without compromising output quality.</div>
+      </div>
+      <div class="character-card">
+        <div class="character-card-title"><span>🎯</span> Attention to Detail</div>
+        <div class="character-card-desc">Maintained precise <strong>Spring Security configurations</strong> across microservices, ensuring no auth regression slipped through during iterative deployments for BCA.</div>
+      </div>
+      <div class="character-card">
+        <div class="character-card-title"><span>⏳</span> Time Management</div>
+        <div class="character-card-desc">Delivered the <strong>TIBCO BPS license renewal</strong> for BPS on schedule, coordinating infrastructure tasks in parallel to minimise production downtime risk.</div>
+      </div>
     </div>
   </div>
 </section>
