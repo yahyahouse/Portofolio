@@ -1630,14 +1630,26 @@
   html.setAttribute('data-theme',localStorage.getItem('theme')||'dark');
 
   /* ══ INK BLOT TRANSITION ══ */
-  const themeOverlay = document.getElementById('themeOverlay');
-  const inkRing      = document.getElementById('inkRing');
-  const INK_DUR      = 720;
-  let   inkBusy      = false;
+  const themeOverlay  = document.getElementById('themeOverlay');
+  const inkRing       = document.getElementById('inkRing');
+  const INK_DUR       = 720;
+  let   inkBusy       = false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function triggerInkBlot(targetTheme, ox, oy) {
     if (inkBusy) return;
     inkBusy = true;
+
+    /* Skip animation for users who prefer reduced motion */
+    if (reducedMotion.matches) {
+      html.classList.add('theme-switching');
+      void html.offsetWidth;
+      html.setAttribute('data-theme', targetTheme);
+      localStorage.setItem('theme', targetTheme);
+      requestAnimationFrame(() => html.classList.remove('theme-switching'));
+      inkBusy = false;
+      return;
+    }
 
     themeOverlay.style.setProperty('--ox', ox + 'px');
     themeOverlay.style.setProperty('--oy', oy + 'px');
