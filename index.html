@@ -914,9 +914,30 @@
       .projects-grid { grid-template-columns:1fr; }
       .hero-name { font-size:2.4rem; }
     }
+
+    /* ══ MEGA MENDUNG CLOUD TRANSITION ══ */
+    #cloudLayer {
+      position: fixed; inset: 0; z-index: 9999;
+      pointer-events: none; overflow: hidden;
+    }
+    .cld {
+      position: absolute;
+      will-change: transform;
+    }
+    @keyframes cldSweepRight {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(100vw + 560px)); }
+    }
+    @keyframes cldSweepLeft {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(-100vw - 560px)); }
+    }
   </style>
 </head>
 <body>
+
+<!-- CLOUD TRANSITION LAYER -->
+<div id="cloudLayer" aria-hidden="true"></div>
 
 <!-- DAUN GUGUR -->
 <div class="daun-field" aria-hidden="true">
@@ -1590,9 +1611,80 @@
   ══════════════════════════════════════ */
   const html=document.documentElement, toggle=document.getElementById('themeToggle');
   html.setAttribute('data-theme',localStorage.getItem('theme')||'dark');
-  toggle.addEventListener('click',()=>{
-    const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
-    html.setAttribute('data-theme',next); localStorage.setItem('theme',next);
+
+  /* ══ MEGA MENDUNG CLOUD ANIMATION ══ */
+  const cloudLayer = document.getElementById('cloudLayer');
+
+  function makeCloud(w, h, color) {
+    const shapes = [];
+    // Base rectangle
+    shapes.push(`<rect x="10" y="${h*0.48}" width="${w-20}" height="${h*0.52}" rx="${h*0.26}" fill="${color}"/>`);
+    // Bumps across the top (mega mendung layered arcs)
+    const bumpCount = Math.max(3, Math.floor(w / 85));
+    for (let i = 0; i < bumpCount; i++) {
+      const frac = i / (bumpCount - 1);
+      const cx = 24 + frac * (w - 48);
+      const ry = h * (0.30 + Math.sin(i * 1.7 + 1) * 0.07);
+      shapes.push(`<ellipse cx="${cx}" cy="${h*0.5}" rx="${(w/(bumpCount))*0.62}" ry="${ry}" fill="${color}"/>`);
+    }
+    // Inner shadow layer for depth (slightly darker, smaller)
+    const innerColor = color + 'cc';
+    shapes.push(`<rect x="10" y="${h*0.7}" width="${w-20}" height="${h*0.3}" rx="${h*0.15}" fill="${innerColor}"/>`);
+    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;display:block;">
+      ${shapes.join('')}
+    </svg>`;
+  }
+
+  let cloudBusy = false;
+  function triggerClouds(targetTheme) {
+    if (cloudBusy) return;
+    cloudBusy = true;
+
+    const toLight = targetTheme === 'light';
+    const lightColors = ['#F5EDD5','#FAF3DC','#EDE3C5','#F0E8C8'];
+    const darkColors  = ['#2A1E0A','#241A08','#1A1208','#201608'];
+    const colors = toLight ? lightColors : darkColors;
+    const DURATION = 1350;
+
+    const configs = [
+      { top:-6,  w:520, h:140, delay:0  },
+      { top:7,   w:400, h:115, delay:55 },
+      { top:19,  w:480, h:145, delay:18 },
+      { top:31,  w:440, h:125, delay:85 },
+      { top:44,  w:500, h:138, delay:8  },
+      { top:57,  w:420, h:120, delay:62 },
+      { top:70,  w:470, h:135, delay:28 },
+      { top:83,  w:540, h:150, delay:42 },
+    ];
+
+    configs.forEach((c, i) => {
+      const el = document.createElement('div');
+      el.className = 'cld';
+      const startX = toLight ? -(c.w + 20) : (window.innerWidth + 20);
+      el.style.cssText = `top:${c.top}vh;left:${startX}px;`;
+      el.innerHTML = makeCloud(c.w, c.h, colors[i % colors.length]);
+      const dur = Math.round(DURATION * (0.92 + (i % 3) * 0.06));
+      const anim = toLight ? 'cldSweepRight' : 'cldSweepLeft';
+      el.style.animation = `${anim} ${dur}ms cubic-bezier(0.4,0,0.6,1) ${c.delay}ms both`;
+      cloudLayer.appendChild(el);
+    });
+
+    // Switch theme at ~45% of animation (mid-sweep)
+    setTimeout(() => {
+      html.setAttribute('data-theme', targetTheme);
+      localStorage.setItem('theme', targetTheme);
+    }, DURATION * 0.45);
+
+    // Clean up
+    setTimeout(() => {
+      cloudLayer.innerHTML = '';
+      cloudBusy = false;
+    }, DURATION + 300);
+  }
+
+  toggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    triggerClouds(next);
   });
 
   const hamburger=document.getElementById('hamburger'), mobileMenu=document.getElementById('mobileMenu');
