@@ -133,14 +133,29 @@
     .theme-toggle {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 0; cursor: pointer;
-      width: 52px; height: 28px; position: relative; transition: all 0.3s;
+      width: 40px; height: 40px;
+      position: relative; transition: border-color 0.3s;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
     .theme-toggle::before {
-      content: '🌙'; position: absolute;
-      top: 50%; left: 5px; transform: translateY(-50%);
-      font-size: 13px; transition: all 0.3s;
+      content: '🌙'; font-size: 14px;
+      transition: opacity 0.2s;
     }
-    [data-theme="light"] .theme-toggle::before { content: '☀️'; left: 28px; }
+    .theme-toggle::after {
+      content: ''; position: absolute;
+      inset: -1px;
+      background:
+        linear-gradient(var(--accent), var(--accent)) top left / 5px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) top left / 1px 5px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 5px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 1px 5px no-repeat;
+      opacity: 0; transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+    .theme-toggle:hover::after { opacity: 0.7; }
+    [data-theme="light"] .theme-toggle::before { content: '☀️'; }
 
     /* ══ HERO ══ */
     .page-hero {

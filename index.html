@@ -285,14 +285,30 @@
     .nav-right { display: flex; align-items: center; gap: 1rem; }
     .theme-toggle {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 0; cursor: pointer; width: 52px; height: 28px;
-      position: relative; transition: all 0.3s;
+      border-radius: 0; cursor: pointer;
+      width: 40px; height: 40px;
+      position: relative; transition: border-color 0.3s;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
     .theme-toggle::before {
-      content: '🌙'; position: absolute; top:50%; left:5px;
-      transform: translateY(-50%); font-size:13px;
+      content: '🌙'; font-size: 14px;
+      transition: opacity 0.2s;
     }
-    [data-theme="light"] .theme-toggle::before { content:'☀️'; left:28px; }
+    .theme-toggle::after {
+      content: ''; position: absolute;
+      inset: -1px;
+      background:
+        linear-gradient(var(--accent), var(--accent)) top left / 5px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) top left / 1px 5px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 5px 1px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 1px 5px no-repeat;
+      opacity: 0; transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+    .theme-toggle:hover::after { opacity: 0.7; }
+    [data-theme="light"] .theme-toggle::before { content: '☀️'; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
     .hamburger span { width:24px; height:2px; background:var(--text); display:block; transition:all 0.3s; }
 
