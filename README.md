@@ -1,42 +1,43 @@
-Buatkan sebuah landing page profile pribadi yang modern dan profesional dengan spesifikasi berikut:
+# Yahya Wijaya — Portfolio
 
-**Identitas:**
-- Nama: Yahya Wijaya
-- Profesi: Software Engineer / Backend Developer
-- Tagline: "Crafting robust systems that power seamless experiences"
-- Lokasi: Jakarta, Indonesia
-- Email: yahyawijaya082@gmail.com
-- GitHub: yahyahouse
-- LinkedIn: Yahya Wijaya
+Personal portfolio website of **Yahya Wijaya**, Software Engineer & Backend Developer based in Jakarta, Indonesia.
 
-**Sections yang harus ada:**
-1. Hero Section — foto profil placeholder, nama, profesi, tagline, tombol CTA (Hire Me & Contact Me)
-2. About Me — deskripsi singkat: passionate backend developer based in Jakarta, focused on building scalable and efficient server-side systems
-3. Skills — tampilkan dengan icon/badge:
-   - Languages: Dart, Python, JavaScript, Go
-   - Backend: Node.js, REST API, GraphQL
-   - Mobile: Flutter
-   - Database: PostgreSQL, MySQL, Firebase, MongoDB
-   - Tools: Git, Docker, Postman, VS Code, IntelliJ
-4. Projects — 3 project unggulan:
-   - Project 1: Idle Kingdom Tycoon — Mobile game built with Flutter
-   - Project 2: REST API Service — Scalable backend API with Node.js & PostgreSQL
-   - Project 3: [placeholder project ke-3]
-   (Tampilkan nama, deskripsi singkat, tech stack badge, dan link GitHub)
-5. Experience — riwayat pekerjaan (gunakan placeholder timeline yang profesional)
-6. Contact — tampilkan email, GitHub, LinkedIn, dan form kontak sederhana (nama, email, pesan)
+🌐 **Live:** [yahyawijaya.com](https://yahyawijaya.com)
 
-**Desain:**
-- Dark mode sebagai default, dengan toggle switch untuk Light mode
-- Color accent: biru elektrik (#3B82F6) atau cyan (#06B6D4)
-- Font: Inter atau Poppins dari Google Fonts
+---
+
+## Sections
+
+- **Hero** — Introduction, CTA, and key stats
+- **About** — Background, current role, and skill proficiency bars
+- **Skills** — Tech stack grouped by category
+- **Projects** — Selected works including open source and client projects
+- **Experience** — Career timeline
+- **Character** — Soft skills backed by concrete achievements
+- **Playground** — Interactive Bug Hunter game
+- **Contact** — Functional contact form via EmailJS
+
+---
+
+## Tech Stack
+
+- **HTML, CSS, JavaScript** — no frameworks, single file
+- **EmailJS** — contact form delivery
+- **Google Fonts** — Cinzel, IM Fell English, Space Mono
+
+## Features
+
+- Dark / Light theme toggle with ink blot transition animation
+- Kawung batik SVG decorative motifs
+- Scroll fade-in animations via Intersection Observer
+- Sticky navbar with active section highlighting
+- `prefers-reduced-motion` support
 - Fully responsive (mobile & desktop)
-- Animasi subtle fade-in saat scroll (Intersection Observer)
-- Smooth scrolling antar section
-- Navbar sticky dengan active state per section
-- Gradient background subtle di hero section
 
-**Tech Stack:**
-- HTML, CSS, JavaScript murni (tanpa framework)
+---
 
-Buat kode yang lengkap dalam satu file index.html, siap pakai, dan production-ready.
+## Contact
+
+- **Email:** yahyawijaya082@gmail.com
+- **LinkedIn:** [linkedin.com/in/yahyawijaya082](https://linkedin.com/in/yahyawijaya082)
+- **GitHub:** [github.com/yahyahouse](https://github.com/yahyahouse)
