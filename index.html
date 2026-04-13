@@ -1013,6 +1013,16 @@
     .theme-switching, .theme-switching * {
       transition: none !important;
     }
+    /* ══ LANGUAGE TOGGLE ══ */
+    .lang-toggle {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; padding: 0.28rem 0.65rem;
+      font-family: 'Space Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 1.5px; cursor: pointer; color: var(--muted);
+      transition: border-color 0.3s, color 0.3s; white-space: nowrap;
+    }
+    .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-toggle .lang-active { color: var(--accent); font-weight: 700; }
   </style>
 </head>
 <body>
@@ -1045,13 +1055,14 @@
     </span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div class="nav-right">
+    <button class="lang-toggle" id="langToggle" title="Toggle language"><span class="lang-active">EN</span> | ID</button>
     <button class="theme-toggle" id="themeToggle" title="Toggle theme"></button>
     <button class="hamburger" id="hamburger" title="Menu">
       <span></span><span></span><span></span>
@@ -1061,11 +1072,11 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about"      onclick="closeMobileMenu()">About</a>
-  <a href="#skills"     onclick="closeMobileMenu()">Skills</a>
-  <a href="#projects"   onclick="closeMobileMenu()">Projects</a>
-  <a href="#experience" onclick="closeMobileMenu()">Experience</a>
-  <a href="#contact"    onclick="closeMobileMenu()">Contact</a>
+  <a href="#about"      onclick="closeMobileMenu()" data-i18n="nav.about">About</a>
+  <a href="#skills"     onclick="closeMobileMenu()" data-i18n="nav.skills">Skills</a>
+  <a href="#projects"   onclick="closeMobileMenu()" data-i18n="nav.projects">Projects</a>
+  <a href="#experience" onclick="closeMobileMenu()" data-i18n="nav.experience">Experience</a>
+  <a href="#contact"    onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -1100,27 +1111,27 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <div class="aksara-deco fade-in">As the Ancient Elders Have Spoken</div>
-      <div class="hero-badge fade-in">Available for Work</div>
+      <div class="aksara-deco fade-in" data-i18n="hero.ancient">As the Ancient Elders Have Spoken</div>
+      <div class="hero-badge fade-in" data-i18n="hero.badge">Available for Work</div>
       <h1 class="hero-name fade-in fade-in-delay-1">
-        <span class="hero-name-jv">Software Engineer</span>
+        <span class="hero-name-jv" data-i18n="hero.name_jv">Software Engineer</span>
         Yahya<br><span class="accent-text">Wijaya</span>
       </h1>
       <p class="hero-role fade-in fade-in-delay-2">
         Software Engineer &nbsp;·&nbsp; <span>Backend Developer</span>
       </p>
-      <p class="hero-tagline fade-in fade-in-delay-3">
+      <p class="hero-tagline fade-in fade-in-delay-3" data-i18n-html="hero.tagline">
         Dedicated to clean, maintainable code and high-quality solutions — crafted with patience and precision.
         <br><em style="font-size:0.8em;opacity:0.6">"A fine blade is forged slowly, so too is great software."</em>
       </p>
       <div class="hero-cta fade-in fade-in-delay-4">
-        <a href="#contact" class="btn btn-primary">◈ Hire Me →</a>
-        <a href="asset/Yahya-Wijaya-CV-2026.pdf" class="btn btn-outline" download>Download CV ↓</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.hire">◈ Hire Me →</a>
+        <a href="asset/Yahya-Wijaya-CV-2026.pdf" class="btn btn-outline" download data-i18n="hero.cv">Download CV ↓</a>
       </div>
       <div class="hero-stats fade-in fade-in-delay-4">
-        <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years of Experience</div></div>
-        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Key Projects</div></div>
-        <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Clients Served</div></div>
+        <div class="stat"><div class="stat-num">3+</div><div class="stat-label" data-i18n="hero.stat1">Years of Experience</div></div>
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label" data-i18n="hero.stat2">Key Projects</div></div>
+        <div class="stat"><div class="stat-num">7+</div><div class="stat-label" data-i18n="hero.stat3">Clients Served</div></div>
       </div>
     </div>
 
@@ -1137,11 +1148,11 @@
         <div class="koro koro-br"></div>
         <div class="info-float if-top">
           <span class="if-label">STATUS</span>
-          <span class="if-val">◈ AVAILABLE</span>
+          <span class="if-val" data-i18n="hero.status">◈ AVAILABLE</span>
         </div>
         <div class="info-float if-bottom">
           <span class="if-label">ROLE</span>
-          <span class="if-val">Backend Dev</span>
+          <span class="if-val" data-i18n="hero.role_float">Backend Dev</span>
         </div>
       </div>
     </div>
@@ -1152,12 +1163,12 @@
 <section id="about">
   <div class="about-grid">
     <div class="fade-in">
-      <div class="section-label">01 — About</div>
+      <div class="section-label" data-i18n="about.label">01 — About</div>
       <h2 class="section-title">
-        <span class="jv">Backend Craftsman & Deep Thinker</span>
-        Systems Architect & Problem Solver.
+        <span class="jv" data-i18n="about.jv">Backend Craftsman & Deep Thinker</span>
+        <span data-i18n="about.title">Systems Architect & Problem Solver.</span>
       </h2>
-      <p class="section-desc">Experienced in building mission-critical applications where precision and reliability are paramount — with a passion for optimizing backend processes and ensuring seamless data integration.</p>
+      <p class="section-desc" data-i18n="about.desc">Experienced in building mission-critical applications where precision and reliability are paramount — with a passion for optimizing backend processes and ensuring seamless data integration.</p>
 
       <div class="watak-bars">
         <div class="watak-item">
@@ -1181,20 +1192,20 @@
 
     <div class="about-card fade-in fade-in-delay-2">
       <div class="about-text">
-        <h3>Greetings, I am Yahya 🙏</h3>
-        <p>A Backend Developer who strives for clean, maintainable code in every endeavour. Deeply proficient in Java Spring Boot with a strong foundation in enterprise-grade solution development.</p>
-        <p>Currently serving as a Junior Consultant at PT PHINCON, having worked alongside distinguished clients such as Telkomsel, BNI, and BCA — focused on API development, system enhancement, and performance optimisation.</p>
+        <h3 data-i18n="about.greeting">Greetings, I am Yahya 🙏</h3>
+        <p data-i18n="about.bio1">A Backend Developer who strives for clean, maintainable code in every endeavour. Deeply proficient in Java Spring Boot with a strong foundation in enterprise-grade solution development.</p>
+        <p data-i18n="about.bio2">Currently serving as a Junior Consultant at PT PHINCON, having worked alongside distinguished clients such as Telkomsel, BNI, and BCA — focused on API development, system enhancement, and performance optimisation.</p>
         <div class="about-info">
-          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Jakarta, Indonesia 🇮🇩</span></div>
-          <div class="info-row"><span class="info-label">Email</span><span class="info-val"><a href="mailto:yahyawijaya082@gmail.com">yahyawijaya082@gmail.com</a></span></div>
-          <div class="info-row"><span class="info-label">LinkedIn</span><span class="info-val"><a href="https://www.linkedin.com/in/yahyawijaya082" target="_blank">Yahya Wijaya</a></span></div>
+          <div class="info-row"><span class="info-label" data-i18n="about.loc_label">Location</span><span class="info-val">Jakarta, Indonesia 🇮🇩</span></div>
+          <div class="info-row"><span class="info-label" data-i18n="about.email_label">Email</span><span class="info-val"><a href="mailto:yahyawijaya082@gmail.com">yahyawijaya082@gmail.com</a></span></div>
+          <div class="info-row"><span class="info-label" data-i18n="about.linkedin_label">LinkedIn</span><span class="info-val"><a href="https://www.linkedin.com/in/yahyawijaya082" target="_blank">Yahya Wijaya</a></span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="pemisah" style="background:var(--bg2);padding:1.5rem;position:relative;z-index:1">
+<div class="pemisah" style="background:var(--bg2);padding:1.5rem;position:relative;z-index:1" data-i18n="sep.text">
   ◈ ── ── ✦ KNOWLEDGE & SKILLS ✦ ── ── ◈
 </div>
 
@@ -1202,15 +1213,15 @@
 <section id="skills">
   <div class="skills-container">
     <div class="section-header fade-in">
-      <div class="section-label">02 — Skills</div>
+      <div class="section-label" data-i18n="skills.label">02 — Skills</div>
       <h2 class="section-title">
-        <span class="jv">The Art of Technical Mastery</span>
-        Technology Expertise
+        <span class="jv" data-i18n="skills.jv">The Art of Technical Mastery</span>
+        <span data-i18n="skills.title">Technology Expertise</span>
       </h2>
     </div>
 
     <div class="skill-group fade-in">
-      <div class="skill-group-title">Programming Languages</div>
+      <div class="skill-group-title" data-i18n="skills.group1">Programming Languages</div>
       <div class="skills-grid">
         <div class="skill-badge"><span>☕</span> Java</div>
         <div class="skill-badge"><span>🐹</span> Golang</div>
@@ -1219,7 +1230,7 @@
       </div>
     </div>
     <div class="skill-group fade-in fade-in-delay-1">
-      <div class="skill-group-title">Frameworks & Technologies</div>
+      <div class="skill-group-title" data-i18n="skills.group2">Frameworks & Technologies</div>
       <div class="skills-grid">
         <div class="skill-badge"><span>🌱</span> Spring Boot</div>
         <div class="skill-badge"><span>🌀</span> Zend Framework</div>
@@ -1228,7 +1239,7 @@
       </div>
     </div>
     <div class="skill-group fade-in fade-in-delay-2">
-      <div class="skill-group-title">Databases</div>
+      <div class="skill-group-title" data-i18n="skills.group3">Databases</div>
       <div class="skills-grid">
         <div class="skill-badge"><span>🐘</span> PostgreSQL</div>
         <div class="skill-badge"><span>🐬</span> MySQL</div>
@@ -1238,7 +1249,7 @@
       </div>
     </div>
     <div class="skill-group fade-in fade-in-delay-3">
-      <div class="skill-group-title">Tools & Others</div>
+      <div class="skill-group-title" data-i18n="skills.group4">Tools & Others</div>
       <div class="skills-grid">
         <div class="skill-badge"><span>🐙</span> Git</div>
         <div class="skill-badge"><span>📬</span> Postman</div>
@@ -1253,18 +1264,18 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header fade-in" style="max-width:1100px;margin:0 auto 4rem;">
-    <div class="section-label">03 — Projects</div>
+    <div class="section-label" data-i18n="projects.label">03 — Projects</div>
     <h2 class="section-title">
-      <span class="jv">Works Offered with Full Heart</span>
-      Key Contributions
+      <span class="jv" data-i18n="projects.jv">Works Offered with Full Heart</span>
+      <span data-i18n="projects.title">Key Contributions</span>
     </h2>
   </div>
   <div class="projects-grid">
     <div class="project-card fade-in" onclick="window.open('https://central.sonatype.com/artifact/io.github.yahyahouse/common-logger','_blank')" style="cursor:pointer;">
       <div class="project-icon">📦</div>
       <div class="project-name">common-logger</div>
-      <div class="project-client">Open Source — Maven Central</div>
-      <p class="project-desc">A personal open-source Java library published to Maven Central. Provides a standardised, reusable logging utility for Spring Boot applications — ready to be pulled as a dependency by any project.</p>
+      <div class="project-client" data-i18n="proj1.client">Open Source — Maven Central</div>
+      <p class="project-desc" data-i18n="proj1.desc">A personal open-source Java library published to Maven Central. Provides a standardised, reusable logging utility for Spring Boot applications — ready to be pulled as a dependency by any project.</p>
       <div class="project-tags">
         <span class="tag">Java</span>
         <span class="tag">Spring Boot</span>
@@ -1287,8 +1298,8 @@
     <div class="project-card fade-in fade-in-delay-1" onclick="window.open('https://smellradar.yahyawijaya.com','_blank')" style="cursor:pointer;">
       <div class="project-icon">📡</div>
       <div class="project-name">Smell Radar</div>
-      <div class="project-client">Personal Project — Mobile App</div>
-      <p class="project-desc">A community-based odour reporting mobile application. Users can pin, rate, and browse smell reports on an interactive map — built with Flutter and powered by Firebase.</p>
+      <div class="project-client" data-i18n="proj2.client">Personal Project — Mobile App</div>
+      <p class="project-desc" data-i18n="proj2.desc">A community-based odour reporting mobile application. Users can pin, rate, and browse smell reports on an interactive map — built with Flutter and powered by Firebase.</p>
       <div class="project-tags">
         <span class="tag">Flutter</span>
         <span class="tag">Firebase</span>
@@ -1305,28 +1316,28 @@
       <div class="project-icon">📡</div>
       <div class="project-name">Notification System</div>
       <div class="project-client">Telkomsel</div>
-      <p class="project-desc">Development of API services to support business operations and Notification Systems. Designed and enhanced backend services for seamless, uninterrupted operation.</p>
+      <p class="project-desc" data-i18n="proj3.desc">Development of API services to support business operations and Notification Systems. Designed and enhanced backend services for seamless, uninterrupted operation.</p>
       <div class="project-tags"><span class="tag">Java</span><span class="tag">Golang</span><span class="tag">Microservices</span></div>
     </div>
     <div class="project-card fade-in">
       <div class="project-icon">🏛️</div>
       <div class="project-name">TIBCO License Renewal</div>
       <div class="project-client">BPS — Badan Pusat Statistik</div>
-      <p class="project-desc">Upgraded TIBCO products to the latest versions. Created documentation for TIBCO Enterprise Administrator and guided the installation process throughout.</p>
+      <p class="project-desc" data-i18n="proj4.desc">Upgraded TIBCO products to the latest versions. Created documentation for TIBCO Enterprise Administrator and guided the installation process throughout.</p>
       <div class="project-tags"><span class="tag">TIBCO</span><span class="tag">Enterprise Admin</span></div>
     </div>
     <div class="project-card fade-in fade-in-delay-1">
       <div class="project-icon">🏦</div>
       <div class="project-name">Siebel Data View</div>
       <div class="project-client">BNI — Bank Negara Indonesia</div>
-      <p class="project-desc">Developed a bespoke enterprise application for BNI's Procurement division. Built REST APIs and database views using Oracle.</p>
+      <p class="project-desc" data-i18n="proj5.desc">Developed a bespoke enterprise application for BNI's Procurement division. Built REST APIs and database views using Oracle.</p>
       <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">Oracle</span><span class="tag">REST API</span></div>
     </div>
     <div class="project-card fade-in fade-in-delay-2">
       <div class="project-icon">🏢</div>
       <div class="project-name">L2 Local Support</div>
       <div class="project-client">Smartfren</div>
-      <p class="project-desc">Handled incidents and developed cases for TIBCO BusinessWorks 5. Created documentation and log rotation procedures for archival purposes.</p>
+      <p class="project-desc" data-i18n="proj6.desc">Handled incidents and developed cases for TIBCO BusinessWorks 5. Created documentation and log rotation procedures for archival purposes.</p>
       <div class="project-tags"><span class="tag">TIBCO BW5</span><span class="tag">L2 Support</span></div>
     </div>
   </div>
@@ -1335,42 +1346,42 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header fade-in" style="max-width:800px;margin:0 auto 4rem;">
-    <div class="section-label">04 — Experience</div>
+    <div class="section-label" data-i18n="exp.label">04 — Experience</div>
     <h2 class="section-title">
-      <span class="jv">The Journey of Craft & Service</span>
-      Work History
+      <span class="jv" data-i18n="exp.jv">The Journey of Craft & Service</span>
+      <span data-i18n="exp.title">Work History</span>
     </h2>
   </div>
   <div class="timeline">
     <div class="timeline-item fade-in">
-      <div class="timeline-period">Feb 2023 — Present</div>
-      <div class="timeline-role">Junior Consultant</div>
+      <div class="timeline-period" data-i18n="exp1.period">Feb 2023 — Present</div>
+      <div class="timeline-role" data-i18n="exp1.role">Junior Consultant</div>
       <div class="timeline-company">PT PHINCON — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Designed, developed, and maintained high-performance backend services for enterprise-scale clients.</li>
-        <li>Architected and optimised secure REST APIs for seamless data exchange.</li>
-        <li>Refined backend logic and database queries to improve application response times.</li>
-        <li>Collaborated within cross-functional teams across all stages of the SDLC.</li>
+        <li data-i18n="exp1.li1">Designed, developed, and maintained high-performance backend services for enterprise-scale clients.</li>
+        <li data-i18n="exp1.li2">Architected and optimised secure REST APIs for seamless data exchange.</li>
+        <li data-i18n="exp1.li3">Refined backend logic and database queries to improve application response times.</li>
+        <li data-i18n="exp1.li4">Collaborated within cross-functional teams across all stages of the SDLC.</li>
       </ul>
     </div>
     <div class="timeline-item fade-in fade-in-delay-1">
-      <div class="timeline-period">Dec 2023 — Jan 2024</div>
-      <div class="timeline-role">Backend Developer Trainee</div>
+      <div class="timeline-period" data-i18n="exp2.period">Dec 2023 — Jan 2024</div>
+      <div class="timeline-role" data-i18n="exp2.role">Backend Developer Trainee</div>
       <div class="timeline-company">PT PHINCON — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Implemented enterprise-grade integration flows using TIBCO BusinessWorks and EMS.</li>
-        <li>Built and documented REST APIs using Spring Boot and Spring Rest Docs.</li>
-        <li>Applied core security protocols and web services using Spring Security.</li>
+        <li data-i18n="exp2.li1">Implemented enterprise-grade integration flows using TIBCO BusinessWorks and EMS.</li>
+        <li data-i18n="exp2.li2">Built and documented REST APIs using Spring Boot and Spring Rest Docs.</li>
+        <li data-i18n="exp2.li3">Applied core security protocols and web services using Spring Security.</li>
       </ul>
     </div>
     <div class="timeline-item fade-in fade-in-delay-2">
-      <div class="timeline-period">Aug 2022 — Dec 2022</div>
-      <div class="timeline-role">Back End Programmer</div>
+      <div class="timeline-period" data-i18n="exp3.period">Aug 2022 — Dec 2022</div>
+      <div class="timeline-role" data-i18n="exp3.role">Back End Programmer</div>
       <div class="timeline-company">Setjen DPR RI — Jakarta, Indonesia</div>
       <ul class="timeline-desc">
-        <li>Assisted in developing internal web applications using PHP and Zend Framework.</li>
-        <li>Analysed and designed database schemas for new application features.</li>
-        <li>Implemented version control best practices (Git) across the development team.</li>
+        <li data-i18n="exp3.li1">Assisted in developing internal web applications using PHP and Zend Framework.</li>
+        <li data-i18n="exp3.li2">Analysed and designed database schemas for new application features.</li>
+        <li data-i18n="exp3.li3">Implemented version control best practices (Git) across the development team.</li>
       </ul>
     </div>
   </div>
@@ -1380,36 +1391,36 @@
 <section id="soft-skills" style="background:var(--bg2);">
   <div class="skills-container">
     <div class="section-header fade-in">
-      <div class="section-label">05 — Character</div>
+      <div class="section-label" data-i18n="char.label">05 — Character</div>
       <h2 class="section-title">
-        <span class="jv">Noble Virtue & Inner Strength</span>
-        Soft Skills
+        <span class="jv" data-i18n="char.jv">Noble Virtue & Inner Strength</span>
+        <span data-i18n="char.title">Soft Skills</span>
       </h2>
     </div>
     <div class="character-grid fade-in">
       <div class="character-card">
-        <div class="character-card-title"><span>💡</span> Problem Solving</div>
-        <div class="character-card-desc">Diagnosed and resolved a critical <strong>TIBCO integration bottleneck</strong> impacting Telkomsel's notification pipeline, restoring stable message flow under production pressure.</div>
+        <div class="character-card-title" data-i18n-html="char1.title"><span>💡</span> Problem Solving</div>
+        <div class="character-card-desc" data-i18n-html="char1.desc">Diagnosed and resolved a critical <strong>TIBCO integration bottleneck</strong> impacting Telkomsel's notification pipeline, restoring stable message flow under production pressure.</div>
       </div>
       <div class="character-card">
-        <div class="character-card-title"><span>🧠</span> Critical Thinking</div>
-        <div class="character-card-desc">Identified slow <strong>Oracle query patterns</strong> in BNI's Siebel procurement system and proposed targeted optimisations, reducing response time without structural changes.</div>
+        <div class="character-card-title" data-i18n-html="char2.title"><span>🧠</span> Critical Thinking</div>
+        <div class="character-card-desc" data-i18n-html="char2.desc">Identified slow <strong>Oracle query patterns</strong> in BNI's Siebel procurement system and proposed targeted optimisations, reducing response time without structural changes.</div>
       </div>
       <div class="character-card">
-        <div class="character-card-title"><span>🗣️</span> Communication</div>
-        <div class="character-card-desc">Coordinated across backend, database, and client stakeholder teams during <strong>multi-client delivery</strong> at PT PHINCON, ensuring alignment on scope and timelines.</div>
+        <div class="character-card-title" data-i18n-html="char3.title"><span>🗣️</span> Communication</div>
+        <div class="character-card-desc" data-i18n-html="char3.desc">Coordinated across backend, database, and client stakeholder teams during <strong>multi-client delivery</strong> at PT PHINCON, ensuring alignment on scope and timelines.</div>
       </div>
       <div class="character-card">
-        <div class="character-card-title"><span>📈</span> Adaptability</div>
-        <div class="character-card-desc">Switched fluently between <strong>Java, Golang, TypeScript, and TIBCO</strong> across different client projects — sometimes within the same sprint — without compromising output quality.</div>
+        <div class="character-card-title" data-i18n-html="char4.title"><span>📈</span> Adaptability</div>
+        <div class="character-card-desc" data-i18n-html="char4.desc">Switched fluently between <strong>Java, Golang, TypeScript, and TIBCO</strong> across different client projects — sometimes within the same sprint — without compromising output quality.</div>
       </div>
       <div class="character-card">
-        <div class="character-card-title"><span>🎯</span> Attention to Detail</div>
-        <div class="character-card-desc">Maintained precise <strong>Spring Security configurations</strong> across microservices, ensuring no auth regression slipped through during iterative deployments for BCA.</div>
+        <div class="character-card-title" data-i18n-html="char5.title"><span>🎯</span> Attention to Detail</div>
+        <div class="character-card-desc" data-i18n-html="char5.desc">Maintained precise <strong>Spring Security configurations</strong> across microservices, ensuring no auth regression slipped through during iterative deployments for BCA.</div>
       </div>
       <div class="character-card">
-        <div class="character-card-title"><span>⏳</span> Time Management</div>
-        <div class="character-card-desc">Delivered the <strong>TIBCO BPS license renewal</strong> for BPS on schedule, coordinating infrastructure tasks in parallel to minimise production downtime risk.</div>
+        <div class="character-card-title" data-i18n-html="char6.title"><span>⏳</span> Time Management</div>
+        <div class="character-card-desc" data-i18n-html="char6.desc">Delivered the <strong>TIBCO BPS license renewal</strong> for BPS on schedule, coordinating infrastructure tasks in parallel to minimise production downtime risk.</div>
       </div>
     </div>
   </div>
@@ -1418,34 +1429,34 @@
 <!-- PLAYGROUND -->
 <section id="playground">
   <div class="section-header fade-in" style="text-align:center;max-width:800px;margin:0 auto 3rem;width:100%;">
-    <div class="section-label" style="justify-content:center;">06 — Playground</div>
+    <div class="section-label" style="justify-content:center;" data-i18n="play.label">06 — Playground</div>
     <h2 class="section-title">
-      <span class="jv" style="display:block;text-align:center;">The Bug Hunter's Trial</span>
-      Bug Hunter Challenge
+      <span class="jv" style="display:block;text-align:center;" data-i18n="play.jv">The Bug Hunter's Trial</span>
+      <span data-i18n="play.title">Bug Hunter Challenge</span>
     </h2>
-    <p class="section-desc" style="margin:0 auto;font-style:italic;">
+    <p class="section-desc" style="margin:0 auto;font-style:italic;" data-i18n="play.desc">
       Take a moment of respite — catch 🐛 bugs before they ravage the codebase. Use arrow keys, WASD, or the on-screen controls.
     </p>
   </div>
 
   <div class="game-wrapper fade-in fade-in-delay-1">
     <div class="game-hud">
-      <div class="hud-item"><span class="hud-label">Score</span><span class="hud-value" id="gsScore">0</span></div>
-      <div class="hud-item"><span class="hud-label">Best</span><span class="hud-value" id="gsHigh">0</span></div>
-      <div class="hud-item"><span class="hud-label">Speed</span><span class="hud-value hud-level" id="gsLevel">1</span></div>
+      <div class="hud-item"><span class="hud-label" data-i18n="play.hud1">Score</span><span class="hud-value" id="gsScore">0</span></div>
+      <div class="hud-item"><span class="hud-label" data-i18n="play.hud2">Best</span><span class="hud-value" id="gsHigh">0</span></div>
+      <div class="hud-item"><span class="hud-label" data-i18n="play.hud3">Speed</span><span class="hud-value hud-level" id="gsLevel">1</span></div>
     </div>
     <div class="canvas-frame">
       <canvas id="gameCanvas" width="480" height="480"></canvas>
       <div class="game-overlay" id="gameOverlay">
         <div class="overlay-box">
           <span class="overlay-icon">🐛</span>
-          <div class="overlay-title" id="overlayTitle">Bug Hunter</div>
-          <p class="overlay-sub" id="overlaySub">
+          <div class="overlay-title" id="overlayTitle" data-i18n="play.game_title">Bug Hunter</div>
+          <p class="overlay-sub" id="overlaySub" data-i18n-html="play.game_sub">
             Guide the engineer to catch all the bugs.<br>
             Every <span class="hl">10 bugs</span> = the pace quickens!<br>
             Do not strike the walls nor thine own tail.
           </p>
-          <button id="startBtn" class="btn btn-primary">◈ Begin the Hunt →</button>
+          <button id="startBtn" class="btn btn-primary" data-i18n="play.start">◈ Begin the Hunt →</button>
         </div>
       </div>
     </div>
@@ -1463,17 +1474,17 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header fade-in" style="text-align:center;max-width:600px;margin:0 auto 4rem;">
-    <div class="section-label" style="justify-content:center;">07 — Contact</div>
+    <div class="section-label" style="justify-content:center;" data-i18n="contact.label">07 — Contact</div>
     <h2 class="section-title">
-      <span class="jv" style="display:block;text-align:center;">Let Us Craft Together</span>
-      Let's Work Together
+      <span class="jv" style="display:block;text-align:center;" data-i18n="contact.jv">Let Us Craft Together</span>
+      <span data-i18n="contact.title">Let's Work Together</span>
     </h2>
-    <p class="section-desc" style="margin:0 auto;font-style:italic;">Have a project in mind or wish to discuss an opportunity? Send word, and I shall respond with earnest.</p>
+    <p class="section-desc" style="margin:0 auto;font-style:italic;" data-i18n="contact.subtitle">Have a project in mind or wish to discuss an opportunity? Send word, and I shall respond with earnest.</p>
   </div>
   <div class="contact-wrapper">
     <div class="contact-info fade-in">
-      <h3>Get in Touch</h3>
-      <p>I remain ever open to discussions of new ventures, creative ideas, or opportunities to become part of your esteemed team.</p>
+      <h3 data-i18n="contact.info_title">Get in Touch</h3>
+      <p data-i18n="contact.info_desc">I remain ever open to discussions of new ventures, creative ideas, or opportunities to become part of your esteemed team.</p>
       <div class="contact-links">
         <a href="mailto:yahyawijaya082@gmail.com" class="contact-link">
           <div class="contact-link-icon">✉️</div>yahyawijaya082@gmail.com
@@ -1488,21 +1499,21 @@
     </div>
     <div class="contact-form fade-in fade-in-delay-2">
       <div class="form-group" id="groupName">
-        <label class="form-label" for="contactName">Your Name</label>
-        <input type="text" id="contactName" class="form-input" placeholder="Your honoured name..." autocomplete="name" />
-        <span class="form-error">Please enter your name.</span>
+        <label class="form-label" for="contactName" data-i18n="contact.form_name">Your Name</label>
+        <input type="text" id="contactName" class="form-input" placeholder="Your honoured name..." autocomplete="name" data-i18n-placeholder="contact.form_name_ph" />
+        <span class="form-error" data-i18n="contact.err_name">Please enter your name.</span>
       </div>
       <div class="form-group" id="groupEmail">
-        <label class="form-label" for="contactEmail">Email Address</label>
+        <label class="form-label" for="contactEmail" data-i18n="contact.form_email">Email Address</label>
         <input type="email" id="contactEmail" class="form-input" placeholder="your@email.com" autocomplete="email" />
-        <span class="form-error">Please enter a valid email address.</span>
+        <span class="form-error" data-i18n="contact.err_email">Please enter a valid email address.</span>
       </div>
       <div class="form-group" id="groupMessage">
-        <label class="form-label" for="contactMessage">Your Message</label>
-        <textarea id="contactMessage" class="form-textarea" placeholder="Tell me of your project..."></textarea>
-        <span class="form-error">Message must be at least 10 characters.</span>
+        <label class="form-label" for="contactMessage" data-i18n="contact.form_msg">Your Message</label>
+        <textarea id="contactMessage" class="form-textarea" placeholder="Tell me of your project..." data-i18n-placeholder="contact.form_msg_ph"></textarea>
+        <span class="form-error" data-i18n="contact.err_msg">Message must be at least 10 characters.</span>
       </div>
-      <button class="form-submit" id="contactSubmit">◈ Send Message →</button>
+      <button class="form-submit" id="contactSubmit" data-i18n="contact.send">◈ Send Message →</button>
     </div>
   </div>
 </section>
@@ -1512,8 +1523,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 <span>Yahya Wijaya</span>. All rights reserved.</div>
-  <div class="footer-jv">Crafted with love from Jakarta ♡</div>
+  <div class="footer-copy" data-i18n="footer.copy">© 2026 Yahya Wijaya. All rights reserved.</div>
+  <div class="footer-jv" data-i18n="footer.crafted">Crafted with love from Jakarta ♡</div>
 </footer>
 
 <script>
@@ -1889,7 +1900,7 @@
     if (!v1 || !v2 || !v3) return;
 
     const btn = document.getElementById('contactSubmit');
-    btn.textContent = '◈ Sending...';
+    btn.textContent = T('contact.sending');
     btn.disabled = true;
 
     try {
@@ -1899,18 +1910,174 @@
         message:      message,
         to_name:      'Yahya',
       });
-      btn.textContent = '◈ Message Sent!';
+      btn.textContent = T('contact.sent');
       btn.style.background = 'linear-gradient(135deg,#4A7C59,#2D5C3A)';
-      showToast('◈ Message delivered. I will reach out soon.', 'success');
+      showToast(T('contact.toast_ok'), 'success');
       document.getElementById('contactName').value    = '';
       document.getElementById('contactEmail').value   = '';
       document.getElementById('contactMessage').value = '';
-      setTimeout(() => { btn.textContent = '◈ Send Message →'; btn.style.background = ''; btn.disabled = false; }, 3000);
+      setTimeout(() => { btn.textContent = T('contact.send'); btn.style.background = ''; btn.disabled = false; }, 3000);
     } catch (err) {
-      btn.textContent = '◈ Send Message →';
+      btn.textContent = T('contact.send');
       btn.disabled = false;
-      showToast('◈ Failed to send. Please try again or email directly.', 'error');
+      showToast(T('contact.toast_err'), 'error');
     }
+  });
+
+  /* ══ i18n ══ */
+  const TRANSLATIONS = {
+    en: {
+      'nav.about':'About','nav.skills':'Skills','nav.projects':'Projects','nav.experience':'Experience','nav.contact':'Contact',
+      'hero.ancient':'As the Ancient Elders Have Spoken','hero.badge':'Available for Work','hero.name_jv':'Software Engineer',
+      'hero.tagline':'Dedicated to clean, maintainable code and high-quality solutions — crafted with patience and precision.<br><em style="font-size:0.8em;opacity:0.6">"A fine blade is forged slowly, so too is great software."</em>',
+      'hero.hire':'◈ Hire Me →','hero.cv':'Download CV ↓',
+      'hero.stat1':'Years of Experience','hero.stat2':'Key Projects','hero.stat3':'Clients Served',
+      'hero.status':'◈ AVAILABLE','hero.role_float':'Backend Dev',
+      'about.label':'01 — About','about.jv':'Backend Craftsman & Deep Thinker','about.title':'Systems Architect & Problem Solver.',
+      'about.desc':'Experienced in building mission-critical applications where precision and reliability are paramount — with a passion for optimizing backend processes and ensuring seamless data integration.',
+      'about.greeting':'Greetings, I am Yahya 🙏',
+      'about.bio1':'A Backend Developer who strives for clean, maintainable code in every endeavour. Deeply proficient in Java Spring Boot with a strong foundation in enterprise-grade solution development.',
+      'about.bio2':'Currently serving as a Junior Consultant at PT PHINCON, having worked alongside distinguished clients such as Telkomsel, BNI, and BCA — focused on API development, system enhancement, and performance optimisation.',
+      'about.loc_label':'Location','about.email_label':'Email','about.linkedin_label':'LinkedIn',
+      'sep.text':'◈ ── ── ✦ KNOWLEDGE & SKILLS ✦ ── ── ◈',
+      'skills.label':'02 — Skills','skills.jv':'The Art of Technical Mastery','skills.title':'Technology Expertise',
+      'skills.group1':'Programming Languages','skills.group2':'Frameworks & Technologies','skills.group3':'Databases','skills.group4':'Tools & Others',
+      'projects.label':'03 — Projects','projects.jv':'Works Offered with Full Heart','projects.title':'Key Contributions',
+      'proj1.client':'Open Source — Maven Central','proj1.desc':'A personal open-source Java library published to Maven Central. Provides a standardised, reusable logging utility for Spring Boot applications — ready to be pulled as a dependency by any project.',
+      'proj2.client':'Personal Project — Mobile App','proj2.desc':'A community-based odour reporting mobile application. Users can pin, rate, and browse smell reports on an interactive map — built with Flutter and powered by Firebase.',
+      'proj3.desc':'Development of API services to support business operations and Notification Systems. Designed and enhanced backend services for seamless, uninterrupted operation.',
+      'proj4.desc':'Upgraded TIBCO products to the latest versions. Created documentation for TIBCO Enterprise Administrator and guided the installation process throughout.',
+      'proj5.desc':'Developed a bespoke enterprise application for BNI\'s Procurement division. Built REST APIs and database views using Oracle.',
+      'proj6.desc':'Handled incidents and developed cases for TIBCO BusinessWorks 5. Created documentation and log rotation procedures for archival purposes.',
+      'exp.label':'04 — Experience','exp.jv':'The Journey of Craft & Service','exp.title':'Work History',
+      'exp1.period':'Feb 2023 — Present','exp1.role':'Junior Consultant',
+      'exp1.li1':'Designed, developed, and maintained high-performance backend services for enterprise-scale clients.',
+      'exp1.li2':'Architected and optimised secure REST APIs for seamless data exchange.',
+      'exp1.li3':'Refined backend logic and database queries to improve application response times.',
+      'exp1.li4':'Collaborated within cross-functional teams across all stages of the SDLC.',
+      'exp2.period':'Dec 2023 — Jan 2024','exp2.role':'Backend Developer Trainee',
+      'exp2.li1':'Implemented enterprise-grade integration flows using TIBCO BusinessWorks and EMS.',
+      'exp2.li2':'Built and documented REST APIs using Spring Boot and Spring Rest Docs.',
+      'exp2.li3':'Applied core security protocols and web services using Spring Security.',
+      'exp3.period':'Aug 2022 — Dec 2022','exp3.role':'Back End Programmer',
+      'exp3.li1':'Assisted in developing internal web applications using PHP and Zend Framework.',
+      'exp3.li2':'Analysed and designed database schemas for new application features.',
+      'exp3.li3':'Implemented version control best practices (Git) across the development team.',
+      'char.label':'05 — Character','char.jv':'Noble Virtue & Inner Strength','char.title':'Soft Skills',
+      'char1.title':'<span>💡</span> Problem Solving','char1.desc':'Diagnosed and resolved a critical <strong>TIBCO integration bottleneck</strong> impacting Telkomsel\'s notification pipeline, restoring stable message flow under production pressure.',
+      'char2.title':'<span>🧠</span> Critical Thinking','char2.desc':'Identified slow <strong>Oracle query patterns</strong> in BNI\'s Siebel procurement system and proposed targeted optimisations, reducing response time without structural changes.',
+      'char3.title':'<span>🗣️</span> Communication','char3.desc':'Coordinated across backend, database, and client stakeholder teams during <strong>multi-client delivery</strong> at PT PHINCON, ensuring alignment on scope and timelines.',
+      'char4.title':'<span>📈</span> Adaptability','char4.desc':'Switched fluently between <strong>Java, Golang, TypeScript, and TIBCO</strong> across different client projects — sometimes within the same sprint — without compromising output quality.',
+      'char5.title':'<span>🎯</span> Attention to Detail','char5.desc':'Maintained precise <strong>Spring Security configurations</strong> across microservices, ensuring no auth regression slipped through during iterative deployments for BCA.',
+      'char6.title':'<span>⏳</span> Time Management','char6.desc':'Delivered the <strong>TIBCO BPS license renewal</strong> for BPS on schedule, coordinating infrastructure tasks in parallel to minimise production downtime risk.',
+      'play.label':'06 — Playground','play.jv':'The Bug Hunter\'s Trial','play.title':'Bug Hunter Challenge',
+      'play.desc':'Take a moment of respite — catch 🐛 bugs before they ravage the codebase. Use arrow keys, WASD, or the on-screen controls.',
+      'play.hud1':'Score','play.hud2':'Best','play.hud3':'Speed','play.game_title':'Bug Hunter',
+      'play.game_sub':'Guide the engineer to catch all the bugs.<br>Every <span class="hl">10 bugs</span> = the pace quickens!<br>Do not strike the walls nor thine own tail.',
+      'play.start':'◈ Begin the Hunt →',
+      'contact.label':'07 — Contact','contact.jv':'Let Us Craft Together','contact.title':'Let\'s Work Together',
+      'contact.subtitle':'Have a project in mind or wish to discuss an opportunity? Send word, and I shall respond with earnest.',
+      'contact.info_title':'Get in Touch','contact.info_desc':'I remain ever open to discussions of new ventures, creative ideas, or opportunities to become part of your esteemed team.',
+      'contact.form_name':'Your Name','contact.form_name_ph':'Your honoured name...','contact.form_email':'Email Address',
+      'contact.form_msg':'Your Message','contact.form_msg_ph':'Tell me of your project...',
+      'contact.err_name':'Please enter your name.','contact.err_email':'Please enter a valid email address.','contact.err_msg':'Message must be at least 10 characters.',
+      'contact.send':'◈ Send Message →','contact.sending':'◈ Sending...','contact.sent':'◈ Message Sent!',
+      'contact.toast_ok':'◈ Message delivered. I will reach out soon.','contact.toast_err':'◈ Failed to send. Please try again or email directly.',
+      'footer.copy':'© 2026 Yahya Wijaya. All rights reserved.','footer.crafted':'Crafted with love from Jakarta ♡',
+    },
+    id: {
+      'nav.about':'Tentang','nav.skills':'Keahlian','nav.projects':'Proyek','nav.experience':'Pengalaman','nav.contact':'Kontak',
+      'hero.ancient':'Seperti Sabda Para Leluhur','hero.badge':'Siap Bekerja','hero.name_jv':'Insinyur Perangkat Lunak',
+      'hero.tagline':'Berdedikasi pada kode yang bersih, mudah dipelihara, dan solusi berkualitas tinggi — dibuat dengan kesabaran dan presisi.<br><em style="font-size:0.8em;opacity:0.6">"Sebilah keris ditempa perlahan, begitu pula perangkat lunak yang hebat."</em>',
+      'hero.hire':'◈ Rekrut Saya →','hero.cv':'Unduh CV ↓',
+      'hero.stat1':'Tahun Pengalaman','hero.stat2':'Proyek Utama','hero.stat3':'Klien Dilayani',
+      'hero.status':'◈ TERSEDIA','hero.role_float':'Backend Dev',
+      'about.label':'01 — Tentang','about.jv':'Pengrajin Backend & Pemikir Mendalam','about.title':'Arsitek Sistem & Pemecah Masalah.',
+      'about.desc':'Berpengalaman dalam membangun aplikasi mission-critical di mana presisi dan keandalan adalah hal utama — dengan hasrat untuk mengoptimalkan proses backend dan memastikan integrasi data yang mulus.',
+      'about.greeting':'Salam kenal, saya Yahya 🙏',
+      'about.bio1':'Seorang Backend Developer yang berdedikasi pada kode yang bersih dan mudah dipelihara di setiap pekerjaan. Sangat mahir dalam Java Spring Boot dengan landasan kuat dalam pengembangan solusi enterprise.',
+      'about.bio2':'Saat ini bertugas sebagai Junior Consultant di PT PHINCON, telah bekerja bersama klien-klien ternama seperti Telkomsel, BNI, dan BCA — berfokus pada pengembangan API, peningkatan sistem, dan optimasi performa.',
+      'about.loc_label':'Lokasi','about.email_label':'Email','about.linkedin_label':'LinkedIn',
+      'sep.text':'◈ ── ── ✦ PENGETAHUAN & KEAHLIAN ✦ ── ── ◈',
+      'skills.label':'02 — Keahlian','skills.jv':'Seni Penguasaan Teknis','skills.title':'Keahlian Teknologi',
+      'skills.group1':'Bahasa Pemrograman','skills.group2':'Framework & Teknologi','skills.group3':'Basis Data','skills.group4':'Alat & Lainnya',
+      'projects.label':'03 — Proyek','projects.jv':'Karya yang Dipersembahkan Sepenuh Hati','projects.title':'Kontribusi Utama',
+      'proj1.client':'Open Source — Maven Central','proj1.desc':'Library Java open-source yang dipublikasikan ke Maven Central. Menyediakan utilitas logging yang terstandarisasi dan dapat digunakan ulang untuk aplikasi Spring Boot — siap ditarik sebagai dependensi oleh proyek manapun.',
+      'proj2.client':'Proyek Pribadi — Aplikasi Mobile','proj2.desc':'Aplikasi pelaporan bau berbasis komunitas. Pengguna dapat menandai, menilai, dan menjelajahi laporan bau di peta interaktif — dibangun dengan Flutter dan didukung Firebase.',
+      'proj3.desc':'Pengembangan layanan API untuk mendukung operasional bisnis dan Sistem Notifikasi. Merancang dan meningkatkan layanan backend untuk operasi yang lancar dan tidak terputus.',
+      'proj4.desc':'Melakukan upgrade produk TIBCO ke versi terbaru. Membuat dokumentasi untuk TIBCO Enterprise Administrator dan memandu proses instalasi secara menyeluruh.',
+      'proj5.desc':'Mengembangkan aplikasi enterprise khusus untuk divisi Pengadaan BNI. Membangun REST API dan database view menggunakan Oracle.',
+      'proj6.desc':'Menangani insiden dan mengembangkan kasus untuk TIBCO BusinessWorks 5. Membuat dokumentasi dan prosedur rotasi log untuk keperluan pengarsipan.',
+      'exp.label':'04 — Pengalaman','exp.jv':'Perjalanan Karya & Pengabdian','exp.title':'Riwayat Karir',
+      'exp1.period':'Feb 2023 — Sekarang','exp1.role':'Junior Consultant',
+      'exp1.li1':'Merancang, mengembangkan, dan memelihara layanan backend berkinerja tinggi untuk klien skala enterprise.',
+      'exp1.li2':'Merancang dan mengoptimalkan REST API yang aman untuk pertukaran data yang mulus.',
+      'exp1.li3':'Menyempurnakan logika backend dan query database untuk meningkatkan waktu respons aplikasi.',
+      'exp1.li4':'Berkolaborasi dalam tim lintas fungsi di seluruh tahap SDLC.',
+      'exp2.period':'Des 2023 — Jan 2024','exp2.role':'Backend Developer Trainee',
+      'exp2.li1':'Mengimplementasikan alur integrasi enterprise menggunakan TIBCO BusinessWorks dan EMS.',
+      'exp2.li2':'Membangun dan mendokumentasikan REST API menggunakan Spring Boot dan Spring Rest Docs.',
+      'exp2.li3':'Menerapkan protokol keamanan inti dan web service menggunakan Spring Security.',
+      'exp3.period':'Agu 2022 — Des 2022','exp3.role':'Back End Programmer',
+      'exp3.li1':'Membantu pengembangan aplikasi web internal menggunakan PHP dan Zend Framework.',
+      'exp3.li2':'Menganalisis dan merancang skema database untuk fitur aplikasi baru.',
+      'exp3.li3':'Menerapkan praktik version control (Git) di seluruh tim pengembangan.',
+      'char.label':'05 — Karakter','char.jv':'Kebajikan Mulia & Kekuatan Batin','char.title':'Soft Skills',
+      'char1.title':'<span>💡</span> Pemecahan Masalah','char1.desc':'Mendiagnosis dan menyelesaikan <strong>hambatan integrasi TIBCO</strong> yang kritis pada pipeline notifikasi Telkomsel, memulihkan aliran pesan yang stabil di bawah tekanan produksi.',
+      'char2.title':'<span>🧠</span> Berpikir Kritis','char2.desc':'Mengidentifikasi <strong>pola query Oracle</strong> yang lambat pada sistem pengadaan Siebel BNI dan mengusulkan optimasi yang tepat sasaran, mengurangi waktu respons tanpa perubahan struktural.',
+      'char3.title':'<span>🗣️</span> Komunikasi','char3.desc':'Mengkoordinasikan tim backend, database, dan pemangku kepentingan klien selama <strong>pengiriman multi-klien</strong> di PT PHINCON, memastikan keselarasan pada cakupan dan tenggat waktu.',
+      'char4.title':'<span>📈</span> Adaptabilitas','char4.desc':'Beralih dengan lancar antara <strong>Java, Golang, TypeScript, dan TIBCO</strong> di berbagai proyek klien — terkadang dalam sprint yang sama — tanpa mengorbankan kualitas output.',
+      'char5.title':'<span>🎯</span> Perhatian terhadap Detail','char5.desc':'Mempertahankan <strong>konfigurasi Spring Security</strong> yang presisi di seluruh microservice, memastikan tidak ada regresi autentikasi yang lolos selama deployment iteratif untuk BCA.',
+      'char6.title':'<span>⏳</span> Manajemen Waktu','char6.desc':'Menyelesaikan <strong>pembaruan lisensi TIBCO BPS</strong> tepat waktu, mengkoordinasikan tugas infrastruktur secara paralel untuk meminimalkan risiko downtime produksi.',
+      'play.label':'06 — Arena','play.jv':'Ujian Pemburu Bug','play.title':'Tantangan Pemburu Bug',
+      'play.desc':'Ambil sejenak waktu istirahat — tangkap 🐛 bug sebelum mereka merusak codebase. Gunakan tombol arah, WASD, atau kontrol di layar.',
+      'play.hud1':'Skor','play.hud2':'Terbaik','play.hud3':'Kecepatan','play.game_title':'Pemburu Bug',
+      'play.game_sub':'Pandukan engineer untuk menangkap semua bug.<br>Setiap <span class="hl">10 bug</span> = kecepatan meningkat!<br>Jangan menabrak dinding maupun ekormu sendiri.',
+      'play.start':'◈ Mulai Berburu →',
+      'contact.label':'07 — Kontak','contact.jv':'Mari Berkarya Bersama','contact.title':'Mari Bekerja Sama',
+      'contact.subtitle':'Punya proyek dalam pikiran atau ingin mendiskusikan peluang? Kirimkan pesan, dan saya akan merespons dengan sungguh-sungguh.',
+      'contact.info_title':'Hubungi Saya','contact.info_desc':'Saya selalu terbuka untuk diskusi mengenai usaha baru, ide kreatif, atau peluang untuk bergabung dengan tim Anda.',
+      'contact.form_name':'Nama Anda','contact.form_name_ph':'Nama Anda yang terhormat...','contact.form_email':'Alamat Email',
+      'contact.form_msg':'Pesan Anda','contact.form_msg_ph':'Ceritakan proyek Anda...',
+      'contact.err_name':'Harap masukkan nama Anda.','contact.err_email':'Harap masukkan alamat email yang valid.','contact.err_msg':'Pesan minimal 10 karakter.',
+      'contact.send':'◈ Kirim Pesan →','contact.sending':'◈ Mengirim...','contact.sent':'◈ Pesan Terkirim!',
+      'contact.toast_ok':'◈ Pesan terkirim. Saya akan segera menghubungi.','contact.toast_err':'◈ Gagal mengirim. Coba lagi atau kirim email langsung.',
+      'footer.copy':'© 2026 Yahya Wijaya. Semua hak dilindungi.','footer.crafted':'Dibuat dengan cinta dari Jakarta ♡',
+    }
+  };
+
+  let currentLang = localStorage.getItem('lang') || 'en';
+
+  function T(key) {
+    return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || TRANSLATIONS.en[key] || key;
+  }
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.textContent = T(el.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      el.innerHTML = T(el.dataset.i18nHtml);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      el.placeholder = T(el.dataset.i18nPlaceholder);
+    });
+    // Update toggle button label
+    const lt = document.getElementById('langToggle');
+    lt.innerHTML = lang === 'en'
+      ? '<span class="lang-active">EN</span> | ID'
+      : 'EN | <span class="lang-active">ID</span>';
+    // Update html lang attribute
+    document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+  }
+
+  // Init language on load
+  applyLang(currentLang);
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    applyLang(currentLang === 'en' ? 'id' : 'en');
   });
 </script>
 </body>
